@@ -1,0 +1,472 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Facebook- 监控- 数据</title>
+		<link rel="shortcut icon" href="favicon.ico"> <link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<!-- jqgrid-->
+		<link href="../../css/plugins/jqgrid/ui.jqgridffe4.css?0820" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<script type="text/javascript">
+			function Editor(obj){
+				var url = obj.name;
+				//打开个人页面
+				window.open(url);
+			}
+			
+			function taskName(obj){
+				var id = obj.name;
+				//打开采集过得展示页面
+				window.open("http://"+host_node+"/fltcollectandshow/facebook.html?id="+id);
+			}
+		</script>
+		
+	</head>
+		
+	<body>
+	 <div class="jqGrid_wrapper" style="height:840">
+		<div style="float:left">
+			<a class="btn" role="button" title="返回" href = "Facebookmonitoring.html"> <img src="../../image/return.png"/></a>
+			<a id = "add_account"  title="添加" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../../image/add.png"/></a>
+			<a id = "edit_account" title="修改" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../../image/edit.png"/></a>
+			<a id = "del_account"  title="删除" role="button" class="btn" > <img src="../../image/delete.png"/></a>
+			<a id = "select_user"  title="刷新" role="button" class="btn" > <img src="../../image/select.png"/></a>
+			<a id = "monitoring_id" role="button" class="btn" > <img src="../../image/monitoring.png"/></a>
+			<a id = "stop_monitoring_id" role="button" class="btn" > <img src="../../image/stop.png"/></a>
+		</div>
+		<div style="float:left">
+		<form enctype="multipart/form-data" id="batchUpload"  action="upload" method="post" class="form-horizontal">  
+        <button class="btn btn-success btn-xs" id="uploadEventBtn" style="height:25px;margin-top:6px;margin-left:20px;float:left"  type="button" >选择文件
+        </button>
+        <input type="file" name="file"  style="width:0px;height:0px;margin-top:6px;float:left" id="uploadEventFile">
+        <input id="uploadEventPath"  disabled="disabled"  type="text" placeholder="请选择Excel表" style="border: 1px solid #e6e6e6; height: 25px;width: 200px;margin-top:6px;float:left" >                                         
+        </form>
+	    <div style="float:left">
+	    <button type="button" style="height:25px;margin-top:6px;float:left" class="btn btn-success btn-sm"  onclick="uploadButton()" >导入</button>
+	    </div>
+	    <div style="float:left"> 
+	    	<a href="#" id = "loadHref" class="btn btn-success btn-sm" style="height:25px;margin-top:6px;float:left;margin-left:20px" download>下载模板</a>
+	    </div>
+	    </div>
+		<div style="clear:both"></div>
+		<table id="table_list_2"></table>
+		<div id="pager_list_2"></div>
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						
+						<div class="modal fade" id="modal-container-293732" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+											任务详细操作
+										</h4>
+									</div>
+									<div class="modal-body">
+										<div style="display:none">
+										<label for="male">ID：</label>
+										<input type="text" id="id" name="id" class="form-control uname" placeholder="" />
+										</div>
+										<div>
+										<label for="male">人物名：</label>
+										<input type="text" id="taskNamename" name="taskNamename"  class="form-control pword m-b" placeholder="请输入采集人物名" />
+										</div>
+										<div>
+										<label for="male">URL：</label>
+										<input type="text" id="url" name="url"  class="form-control pword m-b" placeholder="请输入采集人物URL，URL为空则为关键词搜索" />
+										</div>
+										<div>
+										<label for="male">选择任务组：</label>
+										<select id="grouoptype" style="width : 250px;height : 30px;">
+											<!-- //下拉框动态加载数据 -->
+										</select>
+										<div style="visibility:hidden">1</div>
+										</div>
+										<div>
+										<label for="male">选择任务属性：</label>
+										<select id="attributetype" style="width : 300px;height : 30px;">
+											<!-- //下拉框动态加载数据 -->
+										</select>
+										<div style="visibility:hidden">1</div>
+										</div>
+									<div class="modal-footer">
+										 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+										 <button  id = "button_add" type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+		</div>
+</div>
+			
+	 </div>
+		
+	<script src="../../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../../js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../../js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../../js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script>
+    <script src="../../js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script>
+    <script src="../../js/content.min.js?v=1.0.0"></script>
+	<script src="../../js/my.js"></script>
+	 <script>	<!-- datagrid 数据 ,"用户名","密码","权限","创建时间","修改时间",{name:"user",index:"user",editable:true,width:90},{name:"password",index:"password",editable:true,width:100},{name:"authority",index:"authority",editable:true,width:80,align:"right",sorttype:"int"},{name:"creatTime",index:"creatTime",editable:true,width:80,align:"right",sorttype:"date",formatter:"date"},{name:"updateTime",index:"updateTime",editable:true,width:80,align:"right",sorttype:"date",formatter:"date"}-->
+        $(document).ready(function(){$.jgrid.defaults.styleUI="Bootstrap";
+			var value = sessionStorage.getItem("key"); 
+			if (value == null) {
+				alert("您未登录，请登录！");
+				location.href = "../../login.html";
+			} else {
+				var user = $("#user");
+				user.text(value);
+			}
+		
+		
+			//动态加载下拉属性数据
+			 $.ajax({  
+                url: "http://"+host_node+"/NetCollect/rest/getAllattribute",    //后台webservice里的方法名称  
+				contentType: "application/json; charset=utf-8",   
+                type: "get",  
+				async : true ,
+                dataType: "json",  
+                success: function (date) {  
+					var optionstring = "";
+					for (var j = 0; j < date.length;j++) {				
+						optionstring += "<option value=\"" + date[j].id + "\" >" +"开始日期："+date[j].startregiontime+"&nbsp;&nbsp;结束日期："+date[j].endregiontime+"&nbsp;&nbsp;采集星期："+date[j].weekchoice+"</option>";  
+						$("#attributetype").html("<option value='0'>请选择...</option> "+optionstring);
+					}  
+                } 
+            }); 
+			//动态加载下拉任务组名数据
+			 $.ajax({  
+                url: "http://"+host_node+"/NetCollect/rest/getTaskgroupAll1",    //后台webservice里的方法名称  
+				contentType: "application/json; charset=utf-8",   
+                type: "get",  
+				async : true ,
+                dataType: "json",  
+                success: function (date) {  
+					var optionstring = "";
+					for (var j = 0; j < date.length;j++) {				
+						optionstring += "<option value=\"" + date[j].id + "\" >" +"任务组名："+date[j].groupname+"&nbsp;&nbsp;任务类型："+date[j].grouptype+"</option>";
+						$("#grouoptype").html("<option value='0'>请选择...</option> "+optionstring);
+					}  
+                } 
+            });
+			
+			var id = sessionStorage.getItem("id");
+			var namegroup = sessionStorage.getItem("namegroup");
+			var taskattributeid = sessionStorage.getItem("taskattributeid");
+			$.ajax({
+				url : "http://"+host_node+"/NetCollect/rest/getGroupByid?id="+id,
+				contentType : "application/json; charset=utf-8",
+				type : "get",
+				async : true ,
+				dataType : "json",
+				success : function (date) {
+					var id = date.id;
+					var taskName = date.taskName;
+					var grouptype = date.grouptype;
+					var url = date.url;
+					var taskstatus = date.taskstatus;
+					var startregiontime = date.startregiontime;
+					var endregiontime = date.endregiontime;
+					var weekchoice = date.weekchoice;
+					var priority = date.priority;
+					var keyword = date.keyword;
+					var overview = date.overview;
+					var friends = date.friends;
+					var timelin = date.timelin;
+					var comments = date.comments;
+					var likes = date.likes;
+					var photos = date.photos;
+					var taskattributeid = date.taskattributeid;
+					var taskgroupid = date.taskgroupid;
+					var fbtarget_id = date.fbtarget_id;
+					
+					$("#table_list_2").jqGrid(
+					{data:date,datatype:"local",height:450,autowidth:true,shrinkToFit:true,rowNum:10,rowList:[10,20,30],
+					colNames:["序号","属性ID","分组ID","Target_id","人物名","人物名","URL","URL","采集状态","星期","优先级","开始日期","结束日期"],
+					colModel:[{name:"id",index:id,editable:true,width:40,search:true,align:'center'},
+					{name:"taskattributeid",index:taskattributeid,editable:true,width:40,align:'center',hidden:true},
+					{name:"taskgroupid",index:taskgroupid,editable:true,width:40,align:'center',hidden:true},
+					{name:"fbtarget_id",index:fbtarget_id,editable:true,width:40,align:'center',hidden:true},
+					{name:"taskName",index:taskName,editable:true,width:40,align:'center',hidden:true},
+					{name:"taskName1",index:taskName,editable:true,width:40,align:'center',formatter:taskNameLink},
+					{name:"url",index:url,editable:true,width:130,align:'center',hidden:true},
+					{name:"url1",index:url,editable:true,width:130,align:'center',formatter:cLink},
+					{name:"taskstatus",index:taskstatus,editable:true,width:30,align:'center'},
+					{name:"weekchoice",index:weekchoice,editable:true,width:60,align:'center'},
+					{name:"priority",index:priority,editable:true,width:30,align:'center',hidden:true},
+					{name:"startregiontime",index:startregiontime,editable:true,width:50,align:'center'},
+					{name:"endregiontime",index:endregiontime,editable:true,width:50,align:'center'}],
+					pager:"#pager_list_2",viewrecords:true,sortname : 'id',viewrecords : true,sortorder : "desc",multiselect : true,
+					caption:"Facebook  "+namegroup+"&nbsp;分组",add:true,edit:false,addtext:"Add",edittext:"Edit",hidegrid:false});
+					//$("#table_list_2").setSelection(4,true);
+					$("#table_list_2").jqGrid("navGrid","#pager_list_2",{edit:false,add:false,del:false,search:true},{height:200,reloadAfterSubmit:true});
+					$(window).bind("resize",function(){var width=$(".jqGrid_wrapper").width();
+					$("#table_list_2").setGridParam().hideCol("taskattributeid").trigger("reloadGrid");
+					$("#table_list_2").setGridWidth(width)});
+				},  
+                error: function (msg) {  
+                    alert("加载出错了！");  
+                } 
+				
+			});		
+			
+			//表格中添加a标签的方法
+			function cLink(cellvalue, options, rowObject){
+				var id=rowObject.id;
+				var url = rowObject.url;
+				return '<a href="#" name='+url+' onclick="Editor(this)">'+url+'</a>';
+			}
+			
+			//表格中添加a标签的方法
+			function taskNameLink(cellvalue, options, rowObject){
+				var fbtarget_id=rowObject.fbtarget_id;
+				var taskName = rowObject.taskName;
+				return '<a href="#" name='+fbtarget_id+' onclick="taskName(this)">'+taskName+'</a>';
+			}
+			
+			//刷新
+			$("#select_user").click(function(){
+				location.href="Facebookdetail.html";
+			})
+			
+			     
+         
+			//用户修改弹窗
+			$("#edit_account").click(function(){
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				var data=$('#table_list_2').jqGrid('getRowData',id);
+				var url = data.url;
+				var taskattributeid = data.taskattributeid;
+				var taskgroupid = data.taskgroupid;
+				var taskNamename = data.taskName;
+				$("#id").val(id);
+				$("#url").val(url);
+				$("#taskNamename").val(taskNamename);
+				$("#attributetype").val(taskattributeid);
+				$("#grouoptype").val(taskgroupid);
+			});
+			
+			//用户添加弹窗，清空表单值
+			$("#add_account").click(function(){
+				$("#id").val("");
+				$("#url").val("");
+				$("#taskNamename").val("");
+				$("#grouoptype").val(id);
+				$("#attributetype").val(taskattributeid);
+			});
+			
+			//用户删除
+			$("#del_account").click(function(){
+					var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+					var strid = [];
+					for(i = 0;i < id.length; i++){
+					var data=$('#table_list_2').jqGrid('getRowData',id[i]);
+					strid.push(data.id);
+					}
+					if(id!=""){
+					var status = confirm("你确定要删除吗？");
+					if(!status){
+						return false;
+					}
+					$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/deleteTask",
+					contentType : "application/json; charset=utf-8",
+					traditional:true,   
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : strid
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("删除成功");
+							location.href="Facebookdetail.html?id="+id;
+						}else{
+							alert("删除失败！");
+						}
+					}
+				});
+				}else{
+					alert("未选择，请选择！");
+				}
+			});
+			
+			//监控
+			$("#monitoring_id").click(function(){
+					var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+					var strid = [];
+					for(i = 0;i < id.length; i++){
+					var data=$('#table_list_2').jqGrid('getRowData',id[i]);
+					strid.push(data.id);
+					}
+					if(id!=""){
+					var status = confirm("你确定要监控吗？");
+					if(!status){
+						return false;
+					}
+					$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/MonitoringTask",
+					contentType : "application/json; charset=utf-8",
+					traditional:true,   
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : strid
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("监控成功");
+							location.href="Facebookdetail.html?id="+id;
+						}else{
+							alert("监控失败！");
+						}
+					}
+				});
+				}else{
+					alert("未选择，请选择！");
+				}
+			});
+			
+			$("#stop_monitoring_id").click(function(){
+					var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+					var strid = [];
+					for(i = 0;i < id.length; i++){
+					var data=$('#table_list_2').jqGrid('getRowData',id[i]);
+					strid.push(data.id);
+					}
+					if(id!=""){
+					var status = confirm("你确定要停止监控吗？");
+					if(!status){
+						return false;
+					}
+					$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/StopMonitoringTask",
+					contentType : "application/json; charset=utf-8",
+					traditional:true,   
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : strid
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("停止监控成功");
+							location.href="Facebookdetail.html?id="+id;
+						}else{
+							alert("停止监控失败！");
+						}
+					}
+				});
+				}else{
+					alert("未选择，请选择！");
+				}
+			});
+			
+			//添加，修改的提交
+			$("#button_add").click(function(){
+				var id =  $("#id").val();
+				var url = $("#url").val();
+				var grouoptype = $("#grouoptype").val();
+				var attributetype = $("#attributetype").val();
+				var taskNamename = $("#taskNamename").val();
+				$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/addupdateTask",
+					contentType : "application/json; charset=utf-8",
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						id : id,
+						url : url,
+						taskattributeid : attributetype,
+						taskgroupid : grouoptype,
+						taskName : taskNamename
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("成功");
+							location.href="Facebookdetail.html?id="+id;
+						}else{
+						alert("失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+		});
+		//download facebook.xls
+	  var newHref = "http://"+host_node+"/NetCollect/facebook.xls";
+	  $('#loadHref').attr("href",newHref);
+
+		var Upload = function(){
+     
+        this.init = function(){
+         
+        //模拟上传excel
+         $("#uploadEventBtn").unbind("click").bind("click",function(){
+             $("#uploadEventFile").click();
+         });
+         $("#uploadEventFile").bind("change",function(){
+             $("#uploadEventPath").attr("value",$("#uploadEventFile").val());
+         });
+         
+        };
+       //点击上传按钮
+        this.uploadBtn = function(){
+        var uploadEventFile = $("#uploadEventFile").val();
+        if(uploadEventFile == ''){
+            alert("请选择Excel,再上传");
+        }else if(uploadEventFile.lastIndexOf(".xls")<0){//可判断以.xls和.xlsx结尾的excel
+            alert("只能上传Excel文件");
+        }else{
+         
+            var url = "http://"+host_node+"/NetCollect/rest/uploadFacebook";
+            var formData = new FormData($('form')[0]);
+            upload.sendAjaxRequest(url,'POST',formData);
+        }
+       };
+     
+        this.sendAjaxRequest = function(url,type,data){
+        $.ajax({
+            url : url,
+            type : type,
+            data : data,
+            success : function(result) {
+                alert( result);
+            },
+            error : function() {
+                alert( "excel上传失败");
+            },
+            cache : false,
+            contentType : false,
+            processData : false
+        });
+    };
+    }
+     
+ 
+       var upload;
+       $(function(){
+       upload = new Upload();
+       upload.init();
+       });
+       function uploadButton(){
+       	upload = new Upload();
+       	upload.uploadBtn();
+       }
+		
+    </script>
+	
+	</body>
+</html>

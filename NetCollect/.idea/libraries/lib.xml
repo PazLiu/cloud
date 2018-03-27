@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/twitterone-2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/linkedinCollect-0.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/facebook-jar.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

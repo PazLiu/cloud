@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Linkedin-关键词</title>
+		<link rel="shortcut icon" href="favicon.ico"> 
+        <link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<!-- jqgrid-->
+		<link href="../../css/plugins/jqgrid/ui.jqgridffe4.css?0820" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+        
+        <style type="text/css">
+		
+		.form-control{
+			margin-top:10px;
+		}
+		
+		</style>
+        
+        <script type="text/javascript">		
+			
+			function addKeyword(){
+				$("#keywordlist").append("<input type='text' id='KeyWord' name='KeyWord' class='form-control pword m-b keyword' placeholder='请输入关键词'/>");
+			}
+
+			function myFunction(obj){
+				var ids = obj.id;
+				var namegroup = obj.name;
+				//采用id存入session在任务组详细表根据id查询
+				sessionStorage.setItem("kwyeordid", ids);
+				sessionStorage.setItem("namegroup",namegroup);
+				if(ids!=undefined){
+					location.href="lnkkeywordetail.html?id="+ids+"&namegroup="+namegroup;
+				}else{
+					alert("未选择，请选择！");
+				}
+			}
+			
+		</script>
+        
+	</head>
+		
+	<body>
+	 <div class="jqGrid_wrapper" style="height:810"> 
+		<div style="float:left">
+			<a class="btn" role="button" title="返回" href = "lnkGroup.html"> <img src="../../image/return.png"/></a>
+			<a id = "add_account"  title="添加" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../../image/add.png"/></a>
+			<a id = "edit_account" title="修改" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../../image/edit.png"/></a>
+			<a id = "del_account"  title="删除" role="button" class="btn" > <img src="../../image/delete.png"/></a>
+			<a id = "select_user"  title="刷新" role="button" class="btn" > <img src="../../image/select.png"/></a>
+		</div>
+		
+		<div style="float:left">
+			<form enctype="multipart/form-data" id="batchUpload"  action="upload" method="post" class="form-horizontal">  
+		        <button class="btn btn-success btn-xs" id="uploadEventBtn" style="height:25px;margin-top:6px;margin-left:20px;float:left"  type="button" >选择文件
+		        </button>
+		        <input type="file" name="file"  style="width:0px;height:0px;margin-top:6px;float:left" id="uploadEventFile">
+		        <input type="text" name="groupId" style="display:none" id="groupId">
+		        <input type="text" name="fileMode" style="display:none" id="fileMode" value="keyword">
+		        <input id="uploadEventPath"  disabled="disabled"  type="text" placeholder="请选择Excel表" style="border: 1px solid #e6e6e6; height: 25px;width: 200px;margin-top:6px;float:left" >                                         
+	        </form>
+		    <div style="float:left">
+		    	<button type="button" style="height:25px;margin-top:6px;float:left" class="btn btn-success btn-sm"  onclick="uploadButton()" >导入</button>
+		    </div>
+		    <div style="float:left"> 
+		    	<a href="#" id = "loadHref" class="btn btn-success btn-sm" style="height:25px;margin-top:6px;float:left;margin-left:20px" download>下载模板</a>
+		    </div>
+	    </div>
+    
+	    <div style="clear:both;margin-top:40px"></div>
+		
+		<table id="table_list_2"></table>
+		<div id="pager_list_2"></div>
+			<div class="container">
+				<div class="row clearfix">
+                      <div class="col-md-12 column">
+                            
+                          <div class="modal fade" id="modal-container-293732" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title" id="myModalLabel">
+                                              	 关键词操作
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="keywordlist">
+                                                <label for="male">KeyWord：</label>
+                                                <input type="text" id="KeyWord" name="KeyWord"  class="form-control pword m-b keyword" placeholder="请输入关键词" />
+                                                <div id="keywordid" style="visibility:hidden"></div>
+                                            </div>
+                                            <div id = "btKeyword">
+                                                <button style="margin-top:10px;" class="btn btn-primary" onClick="addKeyword()">添加</button>
+                                            </div>
+    
+                                        <div class="modal-footer">
+                                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                             <button  id = "button_add" type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+                                             <button  id = "button_update" type="button" class="btn btn-primary" data-dismiss="modal">修改</button>
+                                        </div>
+                                    </div>
+                                </div>							
+                            </div>
+                        </div>
+            </div>
+    </div>
+			
+	 </div>
+		
+	<script src="../../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../../js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../../js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../../js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script>
+    <script src="../../js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script>
+    <script src="../../js/content.min.js?v=1.0.0"></script>
+	<script src="../../js/my.js"></script>
+	 <script>
+        $(document).ready(function(){
+			$.jgrid.defaults.styleUI="Bootstrap";
+			var value = sessionStorage.getItem("key"); 
+			if (value == null) {
+				alert("您未登录，请登录！");
+				location.href = "../../login.html";
+			} else {
+				var user = $("#user");
+				user.text(value);
+			}
+		
+
+			var id = sessionStorage.getItem("groupid");
+			var namegroup = sessionStorage.getItem("namegroup"); 		
+			$.ajax({
+				url : "http://"+host_node+"/NetCollect/rest/getLinkedinkeywordbyid",
+				type : "get",
+				dataType : "json",
+				data:{
+					id:id
+				},
+				success : function (date) {
+					var id = date.id;
+					var finished = date.finished;
+					var groupName = date.groupName;
+					var keyword = date.keyword;
+					var createtime = date.createtime;
+					var updatatime = date.updatatime;
+					
+					$("#table_list_2").jqGrid(
+					{data:date,datatype:"local",height:400,autowidth:true,shrinkToFit:true,rowNum:10,rowList:[10,20,30],
+					colNames:["序号","关键词","关键词","状态","组名","创建时间","修改时间"],
+					colModel:[{name:"id",index:id,editable:true,width:20,search:true,align:'center'},
+					{name:"keyword1",index:keyword,editable:true,width:50,align:'center',formatter:cLink},
+					{name:"keyword",index:keyword,editable:true,width:50,align:'center',hidden:true},
+					{name:"finished",index:finished,editable:true,width:10,align:'center',formatter:showStatus},
+					{name:"groupName",index:groupName,editable:true,width:20,align:'center'},					
+					{name:"createtime",index:createtime,editable:true,width:20,align:'center'},
+					{name:"updatatime",index:updatatime,editable:true,width:20,align:'center'}],
+					pager:"#pager_list_2",viewrecords:true,sortname : 'id',viewrecords : true,sortorder : "desc",multiselect : true,
+					caption:"Linkedin  "+namegroup+"&nbsp;分组",add:true,edit:false,addtext:"Add",edittext:"Edit",hidegrid:false});
+					//$("#table_list_2").setSelection(4,true);
+					$("#table_list_2").jqGrid("navGrid","#pager_list_2",{edit:false,add:false,del:false,search:true},{height:200,reloadAfterSubmit:true});
+					$(window).bind("resize",function(){var width=$(".jqGrid_wrapper").width();
+					$("#table_list_2").setGridParam().hideCol("taskattributeid").trigger("reloadGrid");
+					$("#table_list_2").setGridWidth(width)});
+				},  
+                error: function (msg) {  
+                    alert("加载出错了！");  
+                } 
+				
+			});		
+
+			//更改状态
+			function showStatus(cellvalue, options, rowObject){
+				var taskstatus = rowObject.finished;
+				var res ;
+				switch(taskstatus){
+					case 0:
+						res = '未完成';
+						break;
+					case 1:
+						res = '已完成';
+						break;
+					default:
+						res = '正在处理';
+						break;
+					
+				}
+				return res;
+			}
+			
+			//表格中添加a标签的方法
+			function cLink(cellvalue, options, rowObject){
+				var id=rowObject.id;
+				var keyword = rowObject.keyword;
+				var data=$('#table_list_2').jqGrid('getRowData',id);
+				return '<a href="javascript:void(0);" id='+id+' name='+keyword+' onclick="myFunction(this);">'+keyword+'</a>';
+			}
+			
+			//刷新
+			$("#select_user").click(function(){
+				window.location.reload();
+			})
+			
+			
+         
+			//用户修改弹窗
+			$("#edit_account").click(function(){
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				var data=$('#table_list_2').jqGrid('getRowData',id);
+				
+				$("#KeyWord").val(data.keyword);
+				$("#keywordid").val(data.id);
+				
+				$("#button_add").hide();
+				$("#button_update").show();
+				$("#btKeyword").hide();
+			});
+			
+			//用户添加弹窗，清空表单值
+			$("#add_account").click(function(){
+				var id = sessionStorage.getItem("id");
+				$("#id").val(id);
+				$("#url").val("");
+				$("#grouoptype").val("0");
+				$("#attributetype").val("0");
+				
+				$("#button_add").show();
+				$("#button_update").hide();
+				$("#btKeyword").show();
+				
+			});
+			
+			//关键词删除
+			$("#del_account").click(function(){
+				
+				var status = confirm("你确定要删除吗？");
+				if(!status){
+					return false;
+				}
+				
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				var strid = [];
+				for(i = 0;i < id.length; i++){
+					var data=$('#table_list_2').jqGrid('getRowData',id[i]);
+					$.ajax({
+						url : "http://"+host_node+"/NetCollect/rest/deleteLinkedinkeyword",
+						type : "get",
+						datatype : "json",
+						data : {
+							id : data.id
+						},
+						success : function (data){
+							if(data.result=="success"){
+								//window.location.reload();
+							}else{
+								//alert("失败，请查看是否填写正确！");
+							}
+						}				
+					});
+				}
+				window.location.reload();
+			});
+			
+			
+			//用户修改
+			$("#button_update").click(function(){
+				var id = $("#keywordid").val();
+				var keyword = $("#KeyWord").val();
+				
+				$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/updateLinkedinkeyword",
+					type : "get",
+					datatype : "json",
+					data : {
+						keyword : keyword,
+						id : id
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("修改成功");
+							window.location.reload();
+						}else{
+						alert("失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+			
+			
+			//添加，修改的提交
+			$("#button_add").click(function(){
+				var id = sessionStorage.getItem("groupid");
+				var namegroup = sessionStorage.getItem("namegroup"); 
+				
+				var keyword = ""; 
+				$(".keyword").each(function(index, element) {
+                   keyword += $(this).val() + ",";
+                });
+				
+				$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/addLinkedinkeywordgroup",
+					type : "get",
+					datatype : "json",
+					data : {
+						keyword : keyword,
+						id : id
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("添加成功");
+							window.location.reload();
+						}else{
+						alert("失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+
+			var newHref = "http://"+host_node+"/NetCollect/linkedinKeyword.xls";
+			$('#loadHref').attr("href",newHref);
+			$('#groupId').attr("value",sessionStorage.getItem("groupid"));
+
+		});
+
+        var Upload = function(){
+            
+            this.init = function(){
+             
+            //模拟上传excel
+             $("#uploadEventBtn").unbind("click").bind("click",function(){
+                 $("#uploadEventFile").click();
+             });
+             $("#uploadEventFile").bind("change",function(){
+                 $("#uploadEventPath").attr("value",$("#uploadEventFile").val());
+             });
+             
+            };
+           //点击上传按钮
+            this.uploadBtn = function(){
+            var uploadEventFile = $("#uploadEventFile").val();
+            if(uploadEventFile == ''){
+                alert("请选择Excel,再上传");
+            }else if(uploadEventFile.lastIndexOf(".xls")<0){//可判断以.xls和.xlsx结尾的excel
+                alert("只能上传Excel文件");
+            }else{
+             
+                var url = "http://"+host_node+"/NetCollect/rest/uploadLinkedin";
+                var formData = new FormData($('form')[0]);
+                upload.sendAjaxRequest(url,'POST',formData);
+            }
+           };
+         
+            this.sendAjaxRequest = function(url,type,data){
+            $.ajax({
+                url : url,
+                type : type,
+                data : data,
+                success : function(result) {
+                    alert( result);
+                    window.location.reload();
+                },
+                error : function() {
+                    alert( "excel上传失败");
+                },
+                cache : false,
+                contentType : false,
+                processData : false
+            });
+        };
+        }
+         
+     
+           var upload;
+           $(function(){
+           upload = new Upload();
+           upload.init();
+           });
+           function uploadButton(){
+           	upload = new Upload();
+           	upload.uploadBtn();
+           }
+
+        
+    </script>
+	
+	</body>
+</html>

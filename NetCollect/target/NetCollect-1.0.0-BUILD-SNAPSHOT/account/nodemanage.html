@@ -1,0 +1,585 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>节点- 链路- 数据</title>
+		<link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<!-- jqgrid-->
+		<link href="../css/plugins/jqgrid/ui.jqgridffe4.css?0820" rel="stylesheet">
+		<link href="../css/animate.min.css" rel="stylesheet">
+		<link href="../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		
+		<script type="text/javascript">
+			//请求节点状态查询
+			function nodeFunction(obj){
+				var id = obj.id;
+				var type = obj.getAttribute("data-name");
+				var url = "";
+				if(type=="Facebook"){
+					url = "http://"+obj.name+"/NetCollect/rest/node_status";
+				}
+				if(type=="Linkedin"){
+					url = "http://"+obj.name+"/NetCollect/rest/getlnkstatus";
+				}
+				if(type=="Twitter"){
+					url = "http://"+obj.name+"/NetCollect/rest/twitterNodeStatus";
+				}
+				$.ajax({  
+					url: url,    //后台webservice里的方法名称  
+					contentType: "application/json; charset=utf-8",   
+					type: "get",
+					async : true ,
+					dataType: "json",  
+					success: function (date) {  
+						var node_Status = date.result;
+						$("#"+id+"").text(node_Status);
+					} 
+				}); 
+			  }
+
+			//请求节点账号状态查询
+			function accountFunction(obj){
+				var id = obj.id;
+				var type = obj.getAttribute("data-name");
+				var url = "";
+				if(type=="Facebook"){
+					url = "http://"+obj.name+"/NetCollect/rest/account_status?nodeip="+obj.name;
+				}
+				if(type=="Linkedin"){
+					url = "http://"+obj.name+"/NetCollect/rest/lnkLogintest";
+				}
+				$.ajax({  
+					url: url,    //后台webservice里的方法名称  
+					contentType: "application/json; charset=utf-8",
+					type: "get",  
+					async : true ,
+					dataType: "json",  
+					success: function (date) {  
+						var node_Status = date.result;
+						$("#"+id+"").text(node_Status);
+					},
+					error:function(date){
+						$("#"+id+"").text("无法连接");
+					} 
+				}); 
+			}
+			
+			//启动节点
+			function StartFunction(obj){
+				var id = obj.id;
+				var type = obj.getAttribute("data-name");
+				var socialid = obj.getAttribute("data-id");
+				var nodeid = obj.getAttribute("data-node");
+				$("#"+id+"").text("稍等。。。");
+				if(type=="Facebook"){
+					$.ajax({  
+					url: "http://"+obj.name+"/NetCollect/rest/start_node",    //后台webservice里的方法名称  
+					contentType: "application/json; charset=utf-8",   
+					type: "get",  
+					async : true ,
+					timeout : 10000,
+					dataType: "json",
+					data : {
+						nodeip : obj.name
+					},
+					success: function (date) {  
+						var Status = date.result;
+						if(Status=="success"){
+							$("#"+id+"").text("启动成功。。。");
+						}else{
+							$("#"+id+"").text("启动失败。。。");
+						}
+						
+					} 
+				}); 
+				}
+				if(type=="Linkedin"){
+                   $.ajax({
+                   	url: "http://"+obj.name+"/NetCollect/rest/lnkbegin",
+					data:{
+						ip:obj.name,
+					},
+                   	contentType: "application/json; charset=utf-8", 
+                   	type: "get",
+                   	async: true,
+                    timeout: 10000,
+                    datatype: "json",
+                    success: function(data){
+                    	var status = data.status;
+                    	if(status == 200){
+                    		$("#"+id+"").text(data.message);
+                    	}else{
+                    		$("#"+id+"").text(data.message);
+                    	}
+                    },
+					error:function(){
+						$("#"+id+"").text("启动失败");
+					}
+                   	});
+                }
+
+				if(type=="Twitter"){
+                   $.ajax({
+                   	url: "http://"+obj.name+"/NetCollect/rest/startTwitterNode",
+                   	contentType: "application/json; charset=utf-8", 
+                   	type: "get",
+                   	async: true,
+                    timeout: 10000,
+                    datatype: "json",
+                    success: function(data){
+                    	var status = data.result;
+                    	if(status == "success"){
+                    		$("#"+id+"").text("启动成功");
+                    	}else{
+                    		$("#"+id+"").text("启动失败");
+                    	}
+                    }
+                   	});
+                }
+			}
+			
+			function  accountName(obj){
+				var id = obj.id;
+				var type = obj.getAttribute("data-name");
+					$.ajax({  
+					url: "http://"+obj.name+"/NetCollect/rest/get_Account",    //后台webservice里的方法名称  
+					contentType: "application/json; charset=utf-8",   
+					type: "get",  
+					async : true ,
+					timeout : 10000,
+					dataType: "json",
+					data : {
+						type : type
+					},
+					success: function (date) {  
+						var accountName = date.result;
+						$("#"+id+"").text(accountName);
+					} 
+				}); 
+				}
+			
+			function  Http(obj){
+				var id = obj.id;
+				var type = obj.getAttribute("data-name");
+					$.ajax({  
+					url: "http://"+obj.name+"/NetCollect/rest/get_HTTP",    //后台webservice里的方法名称  
+					contentType: "application/json; charset=utf-8",   
+					type: "get",  
+					async : true ,
+					timeout : 10000,
+					dataType: "json",
+					data : {
+						type : type
+					},
+					success: function (date) {  
+						var accountName = date.result;
+						$("#"+id+"").text(accountName);
+					} 
+				}); 
+			}
+			
+		</script>
+	</head>
+		
+	<body>
+	 <div class="jqGrid_wrapper" style="height:840">
+		<div>
+			<a id = "add_account"  title="添加" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../image/add.png"/></a>
+			<a id = "edit_account" title="修改" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../image/edit.png"/></a>
+			<a id = "del_account"  title="删除" role="button" class="btn" > <img src="../image/delete.png"/></a>
+			<a id = "select_user"  title="刷新" role="button" class="btn" > <img src="../image/select.png"/></a>
+			<a id = "select_start"  title="启动节点" role="button" class="btn" > <img src="../image/start.png"/></a>
+			<a id = "select_stop"  title="关闭节点" role="button" class="btn" > <img src="../image/stop_node.png"/></a>
+		</div>
+		<table id="table_list_2"></table>
+		<div id="pager_list_2"></div>
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						
+						<div class="modal fade" id="modal-container-293732" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+											链路编辑
+										</h4>
+									</div>
+									<div class="modal-body">
+										<div style="display:none">
+										<label for="male">ID：</label>
+										<input type="text" id="id" name="id" class="form-control uname" placeholder="" />
+										</div>
+										<div>
+										<label for="male">节点	I	P：</label>
+										<select id="nodeiP" style="width : 250px;height : 30px;">
+											<!-- //下拉框动态加载数据 -->
+										</select>
+										<div style="visibility:hidden">1</div>
+									</div>
+										<div>
+										<label for="male">采集类型：</label>
+										<select id="accountName" style="width : 250px;height : 30px;">
+											<option value = "0" >请选择...</option>
+											<option value = "1" >Facebook</option>
+											<option value = "2" >Linkedin</option>
+											<option value = "3" >Twitter</option>
+										</select>
+										<div style="visibility:hidden">1</div>
+									</div>
+									<div class="modal-footer">
+										 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+										 <button  id = "button_add" type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+		</div>
+</div>
+			
+	 </div>
+		
+	<script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script>
+    <script src="../js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script>
+    <script src="../js/content.min.js?v=1.0.0"></script>
+	<script src="../js/my.js"></script>
+	 <script>	<!-- datagrid 数据 ,"用户名","密码","权限","创建时间","修改时间",{name:"user",index:"user",editable:true,width:90},{name:"password",index:"password",editable:true,width:100},{name:"authority",index:"authority",editable:true,width:80,align:"right",sorttype:"int"},{name:"creatTime",index:"creatTime",editable:true,width:80,align:"right",sorttype:"date",formatter:"date"},{name:"updateTime",index:"updateTime",editable:true,width:80,align:"right",sorttype:"date",formatter:"date"}-->
+        $(document).ready(function(){$.jgrid.defaults.styleUI="Bootstrap";   
+			var value = sessionStorage.getItem("key"); 
+   			var user = $("#user");
+    		user.text(value);
+    		if(value=="null"){
+    			alert("您未登录，请登录！");
+    			location.href="login.html"; 
+    		}
+		
+			//动态加载节点数据
+			 $.ajax({  
+                url: "http://"+host_node+"/NetCollect/rest/getAllnode",    //后台webservice里的方法名称  
+				contentType: "application/json; charset=utf-8",   
+                type: "get",  
+				async : true ,
+                dataType: "json", 
+                success: function (date) {  
+					var optionstring = "";
+					for (var j = 0; j < date.length;j++) {				
+						optionstring += "<option value=\"" + date[j].id + "\" >" +"节点IP："+date[j].nodeip+"&nbsp;&nbsp;"+"物理IP："+date[j].physicalip+"</option>";  
+						$("#nodeiP").html("<option value='0'>请选择...</option> "+optionstring);
+					}  
+                } 
+            }); 
+    	
+			$.ajax({
+				url : "http://"+host_node+"/NetCollect/rest/select_ReationAll",
+				contentType : "application/json; charset=utf-8",
+				type : "get",
+				async : true ,
+				dataType : "json",
+				success : function (date) {
+					var id = date.id;
+					var nodeip = date.nodeip;
+					var physicalip = date.physicalip;
+					var accountName = date.accountName;
+					var nodeid = date.nodeid;
+					var socialid = date.socialid;
+					var accountType = date.accountType;
+					var httpip = date.httpip;
+					var node_status = date.node_status;
+					var account_status = date.account_status;
+					var status = date.status;
+					$("#table_list_2").jqGrid(
+					{data:date,datatype:"local",height:450,autowidth:true,shrinkToFit:true,rowNum:10,rowList:[10,20,30],
+					colNames:["序号","节点IP","物理IP","采集账号","账号类型","HTTP账号","节点ID","账号ID","节点启动","节点状态","账号状态"],
+					colModel:[{name:"id",index:id,editable:true,width:30,search:true,align:'center'},
+					{name:"nodeip",index:nodeip,editable:true,width:70,align:'center'},
+					{name:"physicalip",index:physicalip,editable:true,width:70,align:'center'},
+					{name:"accountName",index:accountName,editable:true,width:80,align:'center',formatter:Account},
+					{name:"accountType",index:accountType,editable:true,width:70,align:'center'},
+					{name:"httpip",index:httpip,editable:true,width:70,align:'center',formatter:Http},
+					{name:"nodeid",index:nodeid,editable:true,width:70,align:'center',hidden : true},
+					{name:"socialid",index:socialid,editable:true,width:70,align:'center',hidden : true},
+					{name:"status",index:status,editable:true,width:70,align:'center',formatter:nodeStart},
+					{name:"node_status",index:node_status,editable:true,width:70,align:'center',formatter:nodeStatus},
+					{name:"account_status",index:account_status,editable:true,width:70,align:'center',formatter:accountStatus}],
+					pager:"#pager_list_2",viewrecords:true,sortname : 'id',viewrecords : true,sortorder : "desc",multiselect : true,
+					caption:"节点 链路 数据",add:true,edit:false,addtext:"Add",edittext:"Edit",hidegrid:false});
+					//$("#table_list_2").setSelection(4,true);
+					$("#table_list_2").jqGrid("navGrid","#pager_list_2",{edit:false,add:false,del:false,search:true},{height:200,reloadAfterSubmit:true});
+					$(window).bind("resize",function(){var width=$(".jqGrid_wrapper").width();
+					$("#table_list_2").setGridWidth(width)});
+				},  
+                error: function (msg) {
+                    alert("加载出错了！");  
+                } 
+				
+			});	
+
+
+			//表格中添加a标签的方法获取账号
+			function Account(cellvalue, options, rowObject){
+				var id="nodeaccount"+rowObject.id;
+					$.ajax({  
+					url: "http://"+rowObject.nodeip+"/NetCollect/rest/get_Account",    //后台webservice里的方法名称  
+					contentType: "application/json; charset=utf-8",   
+					type: "get",
+					async : true ,
+					dataType: "json", 
+					data : {
+						type : rowObject.accountType
+					},
+					success: function (date) {  
+						var accountName = date.result;
+						$("#"+id+"").text(accountName);
+					} 
+				});
+				return '<a href="javascript:void(0);" id='+id+' data-node='+rowObject.id+' name='+rowObject.nodeip+' data-name='+rowObject.accountType+' data-id='+rowObject.socialid+' onclick="accountName(this);">'+rowObject.accountName+'</a>';
+			}
+			//表格中添加a标签的方法获取HTTP
+			function Http(cellvalue, options, rowObject){
+				var id="http"+rowObject.id;
+					$.ajax({  
+					url: "http://"+rowObject.nodeip+"/NetCollect/rest/get_HTTP",    //后台webservice里的方法名称  
+					contentType: "application/json; charset=utf-8",   
+					type: "get",
+					async : true ,
+					dataType: "json", 
+					data : {
+						type : rowObject.accountType
+					},
+					success: function (date) {  
+						var accountName = date.result;
+						$("#"+id+"").text(accountName);
+					} 
+				});
+				return '<a href="javascript:void(0);" id='+id+' data-node='+rowObject.id+' name='+rowObject.nodeip+' data-name='+rowObject.accountType+' data-id='+rowObject.socialid+' onclick="Http(this);">'+rowObject.httpip+'</a>';
+			}
+			
+			
+			//表格中添加a标签的方法启动节点状态
+			function nodeStart(cellvalue, options, rowObject){
+				var id="status"+rowObject.id;
+				return '<a href="javascript:void(0);" id='+id+' data-node='+rowObject.id+' name='+rowObject.nodeip+' data-name='+rowObject.accountType+' data-id='+rowObject.socialid+' onclick="StartFunction(this);">'+rowObject.status+'</a>';
+			}
+			
+			//表格中添加a标签的方法节点状态
+			function nodeStatus(cellvalue, options, rowObject){
+				var id = "node"+rowObject.id;
+				var url = "";
+				if(rowObject.accountType=="Facebook"){
+					url = "http://"+rowObject.nodeip+"/NetCollect/rest/node_status";
+				}
+				if(rowObject.accountType=="Linkedin"){
+					url = "http://"+rowObject.nodeip+"/NetCollect/rest/getlnkstatus";
+				}
+				if(rowObject.accountType=="Twitter"){
+					url = "http://"+rowObject.nodeip+"/NetCollect/rest/twitterNodeStatus";
+				}
+				$.ajax({  
+					url: url,    //后台webservice里的方法名称  
+					contentType: "application/json; charset=utf-8",   
+					type: "get",
+					async : true ,
+					dataType: "json",  
+					success: function (date) {  
+						var node_Status = date.result;
+						$("#"+id+"").text(node_Status);
+						$("#"+"status"+rowObject.id+"").text(node_Status);
+					} 
+				}); 
+				return '<a href="javascript:void(0);" id='+id+' name='+rowObject.nodeip+' data-name='+rowObject.accountType+' onclick="nodeFunction(this);">'+rowObject.node_status+'</a>';
+			}
+			
+			//表格中添加a标签的方法账号状态
+			function accountStatus(cellvalue, options, rowObject){
+				var id="account"+rowObject.id;
+				/* var url = "";
+				if(rowObject.accountType=="Facebook"){
+					url = "http://"+rowObject.nodeip+"/NetCollect/rest/account_status?nodeip="+rowObject.nodeip;
+				}
+				if(rowObject.accountType=="Linkedin"){
+					url = "http://"+rowObject.nodeip+"/NetCollect/rest/lnkLogintest";
+				}
+				$.ajax({  
+					url: url,    //后台webservice里的方法名称  
+					contentType: "application/json; charset=utf-8",
+					type: "get",  
+					async : true ,
+					dataType: "json",  
+					success: function (date) {  
+						var node_Status = date.result;
+						$("#"+id+"").text(node_Status);
+					},
+					error:function(date){
+						$("#"+id+"").text("无法连接");
+					} 
+				});  */
+				return '<a href="javascript:void(0);" id='+id+' name ='+rowObject.nodeip+' data-name='+rowObject.accountType+' onclick="accountFunction(this);">'+rowObject.account_status+'</a>';
+			}
+			
+			
+			//刷新
+			$("#select_user").click(function(){
+				location.href="nodemanage.html";
+			})
+			
+			 //节点批量启动
+			$("#select_start").click(function(){
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				if(id.length!=0){
+				for(i = 0;i < id.length; i++){
+					var data=$('#table_list_2').jqGrid('getRowData',id[i]);
+					var start_url = null;
+					if(data.accountType="Facebook"){
+						start_url = "http://"+data.nodeip+"/NetCollect/rest/start_node?reationid="+id+"&nodeip="+data.nodeip+"&socialid="+data.socialid;	
+					}else if(data.accountType="Linkedin"){
+						start_url = "http://"+data.nodeip+"/NetCollect/rest/lnkbegin?nodeip="+data.nodeip;
+					}else if(data.accountType="Twitter"){
+						start_url = "http://"+data.nodeip+"/NetCollect/rest/startTwitterNode";
+					}
+					var sid = "account"+data.id;
+					alert(start_url);
+					$.ajax({  
+					url: start_url,    //后台webservice里的方法名称  
+					contentType: "application/json; charset=utf-8",   
+					type: "get",  
+					async : true ,
+					timeout : 3000,
+					dataType: "json",
+					success: function (date) {  
+						var Status = date.result;
+					
+						} 
+					});
+					}
+						alert("成功");
+						return;
+					}else{
+						alert("未选择！");
+				}
+			});  
+
+			 //节点批量关闭
+			$("#select_stop").click(function(){
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				if(id.length!=0){
+					for(i = 0;i < id.length; i++){
+						var data=$('#table_list_2').jqGrid('getRowData',id[i]);
+						var stop_url = null;
+						if(data.accountType=="Facebook"){
+							stop_url = "http://"+data.nodeip+"/NetCollect/rest/stop_node?nodeip="+data.nodeip;
+						}else if(data.accountType=="Twitter"){
+							stop_url = "http://"+data.nodeip+"/NetCollect/rest/stopTwitterNode";
+						}
+						$.ajax({
+						url : stop_url,
+						contentType : "application/json; charset=utf-8",
+						traditional:true,   
+						async : true ,
+						type : "get",
+						datatype : "json",
+						success : function (data){
+							
+						}
+					});
+					}
+					alert('节点采集任务完成，自动关闭节点');
+					return;
+				}else{
+					alert("未选择！");
+				}
+			});   
+         
+			//用户修改弹窗
+			$("#edit_account").click(function(){
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				var data=$('#table_list_2').jqGrid('getRowData',id);
+				if(data.id==undefined){
+					alert("未选择，请选择！");
+					return false;
+				}
+				var nodeid = data.nodeid;
+				var socialid = data.socialid;
+				var linkid = data.linkid;
+				$("#id").val(id);
+				$("#nodeiP").val(nodeid);
+			});
+			
+			//用户添加弹窗，清空表单值
+			$("#add_account").click(function(){
+				$("#id").val("");
+				$("#nodeiP").val("0");
+				$("#accountName").val("0");
+			});
+			
+			//用户删除
+			$("#del_account").click(function(){
+					var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+					var strid = [];
+					for(i = 0;i < id.length; i++){
+					var data=$('#table_list_2').jqGrid('getRowData',id[i]);
+					strid.push(data.id);
+					}
+					var status = confirm("你确定要删除吗？");
+					if(!status){
+						return false;
+					}
+					$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/deleteReation",
+					contentType : "application/json; charset=utf-8",
+					traditional:true,   
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : strid
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("删除成功");
+							location.href="nodemanage.html";
+						}else{
+							alert("删除失败！");
+						}
+					}
+				});
+			});
+			//添加，修改的提交
+			$("#button_add").click(function(){
+				var id =  $("#id").val();
+				var nodeid = $("#nodeiP").val();
+				var socialid = $("#accountName").val();
+				$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/insert_Reation",
+					contentType : "application/json; charset=utf-8",
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						id : id,
+						nodeid : nodeid,
+						socialid : socialid
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("成功");
+							location.href="nodemanage.html";
+						}else{
+						alert("失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+		});
+    </script>
+	
+	</body>
+</html>

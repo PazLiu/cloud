@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shty.collect.dao.fb.FriendsMapper">
+	<insert id="insert_Friends" parameterType="com.shty.collect.domain.fb.OverviewFamily"  useGeneratedKeys="true" keyProperty="id">
+		insert into tb_facebook_friend (fbid,fburl,fmt_headline,fmt_name,imgcode,imgurl,referenceType,referenceValue,FBTarget_id,imgPath) values
+		(#{fbid},#{fburl},#{fmt_headline},#{fmt_name},#{imgcode},#{imgurl},#{referenceKey},#{referenceValue},#{FBTarget_id},#{imgPath})
+	</insert>
+	
+	<delete id="delete_Friends">
+		delete from tb_facebook_friend where FBTarget_id =
+		#{FBTarget_id}
+	</delete>
+</mapper>

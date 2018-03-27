@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shty.collect.dao.lnk.EndorsementsDAO">
+
+
+	<!-- 为了返回list 类型而定义的returnMap -->
+    <resultMap id="endorsementsList" type="endorsements">
+        <!-- <id column="auto_id" property="auto_id" />
+        <result column="userId" property="userId" />
+        <result column="userName" property="userName" /> -->
+    </resultMap>
+
+	<!-- 通过id查询单条数据 
+    <select id="selectProfileById" parameterType="Long" resultType="profile">
+        select * from profile where id = #{id} limit 1
+    </select>
+    -->
+    
+    
+	<!-- 返回list 的select 语句，注意 resultMap 的值是指向前面定义好的 -->
+    <select id="getEndorsementsBySkillsId" parameterType="Long" resultMap="endorsementsList">
+        select lnkurl,fullname,fmt_name,fmt_location,fmt_headline,imgurl,imgname from tb_linkedin_endorsements where skills_id = #{skillsId}
+    </select>
+    
+    
+	<!-- 返回list 的select 语句，注意 resultMap 的值是指向前面定义好的 -->
+    <select id="getEndorsementsBySkillsIdLimitTen" parameterType="Long" resultMap="endorsementsList">
+        select lnkurl,fullname,fmt_name,fmt_location,fmt_headline,imgurl,imgname from tb_linkedin_endorsements where skills_id = #{skillsId}
+    </select>
+    
+    <!--执行增加操作的SQL语句。以#{name}的形式引用Student参数  
+       的name属性，MyBatis将使用反射读取Student参数  
+       的此属性。#{name}中name大小写敏感。引用其他  
+       的gender等属性与此一致。seGeneratedKeys设置  
+       为"true"表明要MyBatis获取由数据库自动生成的主  
+       键；keyProperty="id"指定把获取到的主键值注入  
+       到Student的id属性--> 
+    <insert id="addEndorsements" parameterType="java.util.List"> 
+        insert into tb_linkedin_endorsements(dateCreatedTime,lnkid,fmt_name,lnkurl,finished,fmt_location,fmt_headline,peekType,referenceValue,referenceType,imgurl,imgname,skills_id,people_id) values
+        <foreach collection="list" item="obj" index="index" separator=",">
+        (#{obj.dateCreatedTime},
+        #{obj.lnkid},
+        #{obj.fmt_name},
+        #{obj.lnkurl},
+        #{obj.finished},
+        #{obj.fmt_location},
+        #{obj.fmt_headline},
+        #{obj.peekType},
+        #{obj.referenceValue},
+        #{obj.referenceType},
+        #{obj.imgurl},
+        #{obj.imgname},
+        #{obj.skills_id},
+        #{obj.people_id}
+        )
+        </foreach>
+    </insert>
+    
+    
+    
+    
+   
+    
+    <!-- 删除数据 -->
+    <delete id="deleteEndorsements" parameterType="Long">
+        delete from tb_linkedin_endorsements where people_id = #{peopleId}
+    </delete>
+    
+    
+    
+</mapper>

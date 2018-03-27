@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shty.collect.dao.fb.OverviewFamilyMapper">
+	<insert id="insert_OverviewFamily" parameterType="com.shty.collect.domain.fb.OverviewFamily"  useGeneratedKeys="true" keyProperty="id">
+		insert into tb_facebook_overview_family (backgroundcheck,commentscheck,fbid,fburl,finished,fmt_headline,fmt_name,friendscheck,fulldownload,imgPath,imgcode,imgurl,likescheck,picturescheck,referenceType,referenceValue,timelinecheck,FBTarget_id) values
+		(0,0,#{fbid},#{fburl},0,#{fmt_headline},#{fmt_name},0,0,#{imgPath},#{imgcode},#{imgurl},0,0,#{referenceKey},#{referenceValue},0,#{FBTarget_id})
+	</insert>
+	
+	<delete id="delete_OverviewFamily">
+		delete from tb_facebook_overview_family where FBTarget_id =
+		#{FBTarget_id}
+	</delete>
+	
+	<insert id="inset_TimelineLike" parameterType="com.shty.collect.domain.fb.OverviewFamily"  useGeneratedKeys="true" keyProperty="id">
+		insert into tb_facebook_like (fbid,fburl,fmt_headline,fmt_name,imgcode,imgurl,referenceType,referenceValue,FBTarget_id,imgPath) values
+		(#{fbid},#{fburl},#{fmt_headline},#{fmt_name},#{imgcode},#{imgurl},#{referenceKey},#{referenceValue},#{FBStory_id},#{imgPath})
+	</insert>
+	
+</mapper>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="NetCollect:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="NetCollect-1.0.0-BUILD-SNAPSHOT.war">
+      <element id="artifact" artifact-name="NetCollect:war exploded" />
+    </root>
+  </artifact>
+</component>

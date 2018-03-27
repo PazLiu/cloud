@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Linkedin- 数据</title>
+		<link rel="shortcut icon" href="favicon.ico"> 
+        <link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<!-- jqgrid-->
+		<link href="../../css/plugins/jqgrid/ui.jqgridffe4.css?0820" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+        
+        <style type="text/css">
+		
+		.form-control{
+			margin-top:10px;
+		}
+		
+		</style>
+        
+        <script type="text/javascript">		
+			
+			function addKeyword(){
+				$("#keywordlist").append("<input type='text' id='KeyWord' name='KeyWord' class='form-control pword m-b keyword' placeholder='请输入关键词'/>");
+			}
+			
+		</script>
+        
+	</head>
+		
+	<body>
+	 <div class="jqGrid_wrapper" style="height:840">
+		<div>
+			<a class="btn" role="button" title="返回" href="lnkthirdtask.html" > <img src="../../image/return.png"/></a>
+
+			<a id = "select_user"  title="刷新" role="button" class="btn" > <img src="../../image/select.png"/></a>
+		</div>
+		<table id="table_list_2"></table>
+		<div id="pager_list_2"></div>
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						
+						<div class="modal fade" id="modal-container-293732" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+											关键词操作
+										</h4>
+									</div>
+									<div class="modal-body">
+										<div id="keywordlist">
+										<label for="male">KeyWord：</label>
+										<input type="text" id="KeyWord" name="KeyWord"  class="form-control pword m-b keyword" placeholder="请输入关键词" />
+                                        <div id="keywordid" style="visibility:hidden"></div>
+										</div>
+                                        <div id = "btKeyword">
+                                            <button style="margin-top:10px;" class="btn btn-primary" onClick="addKeyword()">添加</button>
+                                        </div>
+
+									<div class="modal-footer">
+										 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+										 <button  id = "button_add" type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+                                         <button  id = "button_update" type="button" class="btn btn-primary" data-dismiss="modal">修改</button>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+		</div>
+</div>
+			
+	 </div>
+		
+	<script src="../../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../../js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../../js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../../js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script>
+    <script src="../../js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script>
+    <script src="../../js/content.min.js?v=1.0.0"></script>
+	<script src="../../js/my.js"></script>
+	 <script>
+        $(document).ready(function(){
+			$.jgrid.defaults.styleUI="Bootstrap";
+			var value = sessionStorage.getItem("key"); 
+			if (value == null) {
+				alert("您未登录，请登录！");
+				location.href = "login.html";
+			} else {
+				var user = $("#user");
+				user.text(value);
+			}
+		
+			var priority= sessionStorage.getItem("priority");
+
+			$.ajax({
+				url : "http://"+host_node+"/NetCollect/rest/third/getThirdLnkTask",
+				type : "get",
+				dataType : "json",
+				data:{
+					priority:priority
+				},
+				success : function (date) {
+					
+					var id = date.id;
+					var taskstatus = date.taskstatus;
+					var fullname = date.fullname;
+					var lnkid = date.lnkid;
+					var url = date.url;
+					var creatTime = date.creatTime;
+					
+					var keyword = sessionStorage.getItem("namegroup"); 
+
+					$("#table_list_2").jqGrid({
+						//url:url,
+						data:date,
+						datatype:"local",
+						height:400,
+						autowidth:true,
+						shrinkToFit:true,
+						rowNum:10,
+						rowList:[10,20,30],
+						colNames:["序号","状态","姓名","领英ID","网址","采集时间"],
+						colModel:[
+							{name:"id",index:id,editable:true,width:10,search:true,align:'center'},
+							{name:"taskstatus",index:taskstatus,editable:true,width:10,align:'center',formatter:showStatus},					
+							{name:"fullname",index:fullname,editable:true,width:60,align:'center',formatter:cLink},
+							{name:"lnkid",index:lnkid,editable:true,width:20,align:'center'},
+							{name:"url",index:url,editable:true,width:40,align:'center',formatter:cLink2},							
+							{name:"creatTime",index:creatTime,editable:true,width:20,align:'center'}
+						],
+						pager:"#pager_list_2",
+						viewrecords:true,
+						sortname : 'id',
+						sortorder : "desc",
+						multiselect : true,
+						caption:"关键词 : "+keyword+"&nbsp;",
+						add:true,
+						edit:false,
+						addtext:"Add",
+						edittext:"Edit",
+						hidegrid:false});
+	
+						$("#table_list_2").jqGrid("navGrid","#pager_list_2",{edit:false,add:false,del:false,search:true},{height:200,reloadAfterSubmit:true});
+						$(window).bind("resize",function(){var width=$(".jqGrid_wrapper").width();
+						$("#table_list_2").setGridParam().hideCol("taskattributeid").trigger("reloadGrid");
+						$("#table_list_2").setGridWidth(width)});
+				},
+                error: function (msg) {  
+                    alert("加载出错了！");  
+                } 			
+			});	
+			
+			
+			//表格中添加a标签的方法
+			function showStatus(cellvalue, options, rowObject){
+				var taskstatus = rowObject.taskstatus;
+				var res ;
+				switch(taskstatus){
+					case '0':
+						res = '未完成';
+						break;
+					case '1':
+						res = '已完成';
+						break;
+					case '5':
+						res = '正在处理';
+						break;
+					
+				}
+				return res;
+			}
+			
+			
+			//表格中添加a标签的方法
+			function cLink(cellvalue, options, rowObject){
+				var fullname=rowObject.fullname;
+				var id=rowObject.id;
+				return '<a href="http://'+host_node+'/fltcollectandshow/linkedin.html?id='+id+'" id = '+id+' target = _blank>'+fullname+'</a>';
+			}
+			
+			//表格中添加a标签的方法
+			function cLink2(cellvalue, options, rowObject){
+				var fullname=rowObject.fullname;
+				var id=rowObject.id;
+				var url = rowObject.url;
+				return '<a href='+ url +' id = '+id+' target = _blank>'+url+'</a>';
+			}
+			
+			//刷新
+			$("#select_user").click(function(){
+				window.location.reload();
+			})
+
+		});
+		
+    </script>
+	
+	</body>
+</html>

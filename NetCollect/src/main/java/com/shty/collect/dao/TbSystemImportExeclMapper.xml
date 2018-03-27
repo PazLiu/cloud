@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shty.collect.dao.TbSystemImportExeclMapper">
+
+
+	<insert id="insertImportTask" parameterType="com.shty.collect.domain.TbTwitterSysTask">
+		insert into
+		tb_twitter_sys_task (URL, taskAttributeId,taskGroupId,taskName)
+		values
+		(#{url,jdbcType=VARCHAR}, #{taskattributeid,jdbcType=BIGINT},
+		#{taskgroupid,jdbcType=BIGINT},
+		#{taskname,jdbcType=VARCHAR})
+	</insert>
+
+	<insert id="insertImportFacebookTask" parameterType="com.shty.collect.domain.TbFacebookSysTask">
+		insert into
+		tb_facebook_sys_task(URL,taskName,taskAttributeId,taskGroupId,taskStatus,creatTime)
+		values
+		(#{url,jdbcType=VARCHAR},
+		#{taskName,jdbcType=VARCHAR},#{taskattributeid,jdbcType=BIGINT},
+		#{taskgroupid,jdbcType=BIGINT}, #{taskstatus,jdbcType=VARCHAR}, now())
+	</insert>
+	<insert id="insertImportAccount" parameterType="com.shty.collect.domain.TbSystemSocialaccount">
+		insert into
+		tb_system_socialaccount
+		(accountname,password,accounttype,isused,httpid,creatTime,updateTime)
+		value
+		(#{accountname},#{password},#{accounttype},#{isused},#{httpid},now(),now())
+	</insert>
+</mapper>

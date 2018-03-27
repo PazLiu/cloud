@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>VPN 账号 - 数据</title>
+		<link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<!-- jqgrid-->
+		<link href="../css/plugins/jqgrid/ui.jqgridffe4.css?0820" rel="stylesheet">
+		<link href="../css/animate.min.css" rel="stylesheet">
+		<link href="../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+	</head>
+		
+	<body>
+	 <div class="jqGrid_wrapper" style="height:840">
+		<div>
+			<a id = "add_account" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../image/add.png"/></a>
+			<a id = "edit_account" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../image/edit.png"/></a>
+			<a id = "del_account" role="button" class="btn" > <img src="../image/delete.png"/></a>
+			<a id = "select_user" role="button" class="btn" > <img src="../image/select.png"/></a>
+		</div>
+		<table id="table_list_2"></table>
+		<div id="pager_list_2"></div>
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						
+						<div class="modal fade" id="modal-container-293732" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+											HTTP代理IP操作
+										</h4>
+									</div>
+									<div class="modal-body">
+										<div style="display:none">
+										<label for="male">ID：</label>
+											<input type="text" id="id" name="id" class="form-control uname" placeholder="请输入ID" />
+										</div>
+										<div>
+										<label for="male">HTTP代理IP：</label>
+											<input type="text" id="httpip" name="httpip" class="form-control uname" placeholder="请输入HTTP代理IP" />
+										</div>
+										<div style="visibility:hidden">a</div>
+										<div>
+										<label for="male">代理端口：</label>
+											<input type="text" id="port" name="port"  class="form-control pword m-b" placeholder="请输入代理端口" />
+										</div>
+										<div>
+										<label for="male">代理用户：</label>
+											<input type="text" id="httpname" name="httpname"  class="form-control pword m-b" placeholder="请输入代理用户" />
+										</div>
+										<div>
+										<label for="male">代理密码：</label>
+											<input type="text" id="httppassword" name="httppassword"  class="form-control pword m-b" placeholder="请输入代理密码" />
+										</div>
+									</div>
+									<div class="modal-footer">
+										 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+										 <button  id = "button_add" type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+		</div>
+</div>
+			
+	 </div>
+		
+	<script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script>
+    <script src="../js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script>
+    <script src="../js/content.min.js?v=1.0.0"></script>
+	<script src="../js/my.js"></script>
+	 <script>	<!-- datagrid 数据 ,"用户名","密码","权限","创建时间","修改时间",{name:"user",index:"user",editable:true,width:90},{name:"password",index:"password",editable:true,width:100},{name:"authority",index:"authority",editable:true,width:80,align:"right",sorttype:"int"},{name:"creatTime",index:"creatTime",editable:true,width:80,align:"right",sorttype:"date",formatter:"date"},{name:"updateTime",index:"updateTime",editable:true,width:80,align:"right",sorttype:"date",formatter:"date"}-->
+        $(document).ready(function(){$.jgrid.defaults.styleUI="Bootstrap";
+    		var value = sessionStorage.getItem("key");
+    		alert(value);
+    		if (value == null) {
+				alert("您未登录，请登录！");
+				location.href = "../login.html";
+			} else {
+				var user = $("#user");
+				user.text(value);
+			}
+        
+			$.ajax({
+				url : "http://"+host_node+"/NetCollect/rest/getAllHttp",
+				contentType : "application/json; charset=utf-8",
+				type : "get",
+				async : true ,
+				dataType : "json",
+				success : function (date) {
+					var id = date.id;
+					var httpip = date.httpip;
+					var port = date.port;
+					var httpname = date.httpname;
+					var httppassword = date.httppassword;
+					var isused = date.isused;
+					var creattime = date.creattime;
+					var updatetime = date.updatetime;
+					$("#table_list_2").jqGrid(
+					{data:date,datatype:"local",height:450,autowidth:true,shrinkToFit:true,rowNum:10,rowList:[10,20,30],
+					colNames:["序号","代理IP","代理端口","代理用户","代理密码","状态","创建时间","修改时间"],
+					colModel:[{name:"id",index:id,editable:true,width:30,search:true,align:'center'},
+					{name:"httpip",index:httpip,editable:true,width:40,align:'center'},
+					{name:"port",index:port,editable:true,width:70,align:'center'},
+					{name:"httpname",index:httpip,editable:true,width:40,align:'center'},
+					{name:"httppassword",index:port,editable:true,width:70,align:'center'},
+					{name:"isused",index:isused,editable:true,width:40,align:'center'},
+					{name:"creattime",index:creattime,editable:true,width:70,align:'center'},
+					{name:"updatetime",index:updatetime,editable:true,width:70,align:'center'}],
+					pager:"#pager_list_2",viewrecords:true,sortname : 'id',viewrecords : true,sortorder : "desc",multiselect : true,
+					caption:"HTTP代理数据",add:true,edit:false,addtext:"Add",edittext:"Edit",hidegrid:false});
+					//$("#table_list_2").setSelection(4,true);
+					$("#table_list_2").jqGrid("navGrid","#pager_list_2",{edit:false,add:false,del:false,search:true},{height:200,reloadAfterSubmit:true});
+					$(window).bind("resize",function(){var width=$(".jqGrid_wrapper").width();
+					$("#table_list_2").setGridWidth(width)});
+				},  
+                error: function (msg) {  
+                    alert("加载出错了！");  
+                } 
+				
+			});		
+			
+			//刷新
+			$("#select_user").click(function(){
+				location.href="http.html";
+			})
+         
+			//用户修改弹窗
+			$("#edit_account").click(function(){
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				var data=$('#table_list_2').jqGrid('getRowData',id);
+				var httpip = data.httpip;
+				var port = data.port;
+				var httpname = data.httpname;
+				var httppassword = data.httppassword;
+				$("#id").val(id);
+				$("#httpip").val(httpip);
+				$("#port").val(port);
+				$("#httpname").val(httpname);
+				$("#httppassword").val(httppassword);
+			});
+			
+			//用户添加弹窗，清空表单值
+			$("#add_account").click(function(){
+				$("#id").val("");
+				$("#httpip").val("");
+				$("#port").val("");
+				$("#httpname").val("");
+				$("#httppassword").val("");
+			});
+			
+			//用户删除
+			$("#del_account").click(function(){
+					var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+					var strid = [];
+					for(i = 0;i < id.length; i++){
+					var data=$('#table_list_2').jqGrid('getRowData',id[i]);
+					strid.push(data.id);
+					}
+					var status = confirm("你确定要删除吗？");
+					if(!status){
+						return false;
+					}
+					$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/deleteHttp",
+					contentType : "application/json; charset=utf-8",
+					traditional:true,   
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : strid
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("删除成功");
+							location.href="http.html";
+						}else{
+							alert("删除失败！");
+						}
+					}
+				});
+			});
+			//添加，修改的提交
+			$("#button_add").click(function(){
+				var id =  $("#id").val();
+				var httpip = $("#httpip").val();
+				var port = $("#port").val();
+				var httpname = $("#httpname").val();
+				var httppassword = $("#httppassword").val();
+				$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/addUpdateHttp",
+					contentType : "application/json; charset=utf-8",
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						id : id,
+						httpip : httpip,
+						port : port,
+						httpname : httpname,
+						httppassword : httppassword
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("成功");
+							location.href="http.html";
+						}else{
+						alert("失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+		});
+		
+		
+		
+    </script>
+	
+	</body>
+</html>

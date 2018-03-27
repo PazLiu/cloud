@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shty.collect.dao.fb.TimelineStoryimgCodeListMapper">
+
+	<insert id="insert_TimelineStoryimgCodeList" parameterType="com.shty.collect.domain.fb.TimelineStoryimgCodeList"  useGeneratedKeys="true" keyProperty="id">
+		insert into tb_facebook_strory_imgcodelist (FBStory_id,ImgCodeList,position) values
+		(#{FBStory_id},#{ImgCodeList},#{position})
+	</insert>
+	
+	<insert id="insert_timelineStoryimgUrlList" parameterType="com.shty.collect.domain.fb.TimelineStoryimgCodeList">
+		insert into tb_facebook_strory_imgurllist (FBStory_id,imgurlList,position) values
+		(#{FBStory_id},#{ImgCodeList},#{position})
+	</insert>
+	
+	
+	<insert id="insert_timelineStoryimgPath" parameterType="com.shty.collect.domain.fb.TimelineStoryimgCodeList">
+		insert into tb_facebook_strory_imgpath (FBStory_id,imgPath,position) values
+		(#{FBStory_id},#{ImgCodeList},#{position})
+	</insert>
+	
+</mapper>

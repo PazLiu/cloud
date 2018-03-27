@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shty.collect.dao.fb.OverviewContactsMapper">
+	<insert id="insert_OverviewContacts" parameterType="com.shty.collect.domain.fb.OverviewContacts"  useGeneratedKeys="true" keyProperty="id">
+		insert into tb_facebook_overview_contacts (infoKey,infoValue,FBTarget_id) values
+		(#{infoKey},#{infoValue},#{FBTarget_id})
+	</insert>
+	
+	<delete id="delete_OverviewContacts">
+		delete from tb_facebook_overview_contacts where FBTarget_id =
+		#{FBTarget_id}
+	</delete>
+	
+	<insert id="insert_OverviewBasicinfos" parameterType="com.shty.collect.domain.fb.OverviewContacts"  useGeneratedKeys="true" keyProperty="id">
+		insert into tb_facebook_overview_basicinfos (infoKey,infoValue,FBTarget_id) values
+		(#{infoKey},#{infoValue},#{FBTarget_id})
+	</insert>
+	
+	<delete id="delete_OverviewBasicinfos">
+		delete from tb_facebook_overview_basicinfos where FBTarget_id =
+		#{FBTarget_id}
+	</delete>
+	
+	<insert id="insert_OverviewNicknames" parameterType="com.shty.collect.domain.fb.OverviewContacts"  useGeneratedKeys="true" keyProperty="id">
+		insert into tb_facebook_overview_nicknames (infoKey,infoValue,FBTarget_id) values
+		(#{infoKey},#{infoValue},#{FBTarget_id})
+	</insert>
+	
+	<delete id="delete_OverviewNicknames">
+		delete from tb_facebook_overview_nicknames where FBTarget_id =
+		#{FBTarget_id}
+	</delete>
+	
+	
+	<insert id="insert_OverviewRelationship" parameterType="com.shty.collect.domain.fb.OverviewContacts"  useGeneratedKeys="true" keyProperty="id">
+		insert into tb_facebook_overview_relationship (infoKey,infoValue,FBTarget_id) values
+		(#{infoKey},#{infoValue},#{FBTarget_id})
+	</insert>
+	
+	<delete id="delete_OverviewRelationship">
+		delete from tb_facebook_overview_relationship where FBTarget_id =
+		#{FBTarget_id}
+	</delete>
+	
+	
+	<insert id="insert_OverviewBio" parameterType="com.shty.collect.domain.fb.OverviewContacts"  useGeneratedKeys="true" keyProperty="id">
+		insert into tb_facebook_overview_bio (infoKey,infoValue,FBTarget_id) values
+		(#{infoKey},#{infoValue},#{FBTarget_id})
+	</insert>
+	
+	<delete id="delete_OverviewBio">
+		delete from tb_facebook_overview_bio where FBTarget_id =
+		#{FBTarget_id}
+	</delete>
+	
+	
+	<insert id="insert_OverviewQuote" parameterType="com.shty.collect.domain.fb.OverviewContacts"  useGeneratedKeys="true" keyProperty="id">
+		insert into tb_facebook_overview_quote (infoKey,infoValue,FBTarget_id) values
+		(#{infoKey},#{infoValue},#{FBTarget_id})
+	</insert>
+	
+	<delete id="delete_OverviewQuote">
+		delete from tb_facebook_overview_quote where FBTarget_id =
+		#{FBTarget_id}
+	</delete>
+	
+	
+</mapper>

@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+	<script src="js/my.js"></script>
+	<script type="text/javascript">
+	</script>
+</head>
+<body>
+    <div style="margin-left:350px">
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="facebook" style="width: 900px;height:280px;"></div>
+	<div id="linkedin" style="width: 900px;height:280px;"></div>
+	<div id="twitter" style="width: 900px;height:280px;"></div>
+	</div>
+    <script type="text/javascript">
+		var Facebook = echarts.init(document.getElementById('facebook'));
+         // 显示标题，图例和空的坐标轴
+         Facebook.setOption({
+             title: {
+                 text: 'Facebook采集量'
+             },
+             tooltip: {},
+             legend: {
+                 data:['数量（条）']
+             },
+             xAxis: {
+                 data: []
+             },
+             yAxis: {},
+             series: [{
+                 name: '数量（条）',
+                 type: 'bar',
+                 data: [],
+				 barWidth: 50,
+				 itemStyle:{  
+					normal:{
+						  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+							  offset: 0,
+							  color: '#FF00FF'
+							}, {
+							  offset: 1,
+							  color: '#2294E4'
+							}]),
+							//shadowColor: 'rgba(0, 0, 0, 0.4)',
+							//shadowBlur: 20
+						}
+                    }  
+             }]
+         });
+      
+         Facebook.showLoading();    //数据加载完之前先显示一段简单的loading动画
+         
+         var facebooknames=[];    //类别数组（实际用来盛放X轴坐标值）
+         var facebooknums=[];    //销量数组（实际用来盛放Y坐标值）
+         
+         $.ajax({
+         type : "get",
+         async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+         url : "http://"+host_node+"/NetCollect/rest/getCountValue",    //请求发送到TestServlet处
+         data : {},
+         dataType : "json",        //返回数据形式为json
+         success : function(result) {
+             //请求成功时执行该函数内容，result即为服务器返回的json对象
+             if (result) {
+                    for(var i=0;i<result.length;i++){       
+                       facebooknames.push(result[i].dateTime);    //挨个取出类别并填入类别数组
+                     }
+                    for(var i=0;i<result.length;i++){       
+                        facebooknums.push(result[i].count);    //挨个取出销量并填入销量数组
+                      }
+                    Facebook.hideLoading();    //隐藏加载动画
+                    Facebook.setOption({        //加载数据图表
+                        xAxis: {
+                            data: facebooknames
+                        },
+                        series: [{
+                            // 根据名字对应到相应的系列
+                            name: '数量（条）',
+                            data: facebooknums
+                        }]
+                    });
+                    
+             }
+         
+        },
+         error : function(errorMsg) {
+             //请求失败时执行该函数
+         alert("图表请求数据失败!");
+         Facebook.hideLoading();
+         }
+    });
+
+    var Linkedin = echarts.init(document.getElementById('linkedin'));
+         // 显示标题，图例和空的坐标轴
+         Linkedin.setOption({
+             title: {
+                 text: 'Linkedin采集量'
+             },
+             tooltip: {},
+             legend: {
+                 data:['数量（条）']
+             },
+             xAxis: {
+                 data: []
+             },
+             yAxis: {},
+             series: [{
+                 name: '数量（条）',
+                 type: 'bar',
+                 data: [],
+				  barWidth: 50,
+				 itemStyle:{  
+					normal:{
+						  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+							  offset: 0,
+							  color: '#FF00FF'
+							}, {
+							  offset: 1,
+							  color: '#2294E4'
+							}]),
+							//shadowColor: 'rgba(0, 0, 0, 0.4)',
+							//shadowBlur: 20
+						}
+                    } 
+             }]
+         });
+      
+         Linkedin.showLoading();    //数据加载完之前先显示一段简单的loading动画
+         
+         var linkedinnames=[];    //类别数组（实际用来盛放X轴坐标值）
+         var linkedinnums=[];    //销量数组（实际用来盛放Y坐标值）
+         
+         $.ajax({
+         type : "get",
+         async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+         url : "http://"+host_node+"/NetCollect/rest/getAllCountByDay",    //请求发送到TestServlet处
+         data : {},
+         dataType : "json",        //返回数据形式为json
+         success : function(result) {
+             //请求成功时执行该函数内容，result即为服务器返回的json对象
+             if (result) {
+                    for(var i=0;i<result.length;i++){       
+                       linkedinnames.push(result[i].dateTime);    //挨个取出类别并填入类别数组
+                     }
+                    for(var i=0;i<result.length;i++){       
+                        linkedinnums.push(result[i].count);    //挨个取出销量并填入销量数组
+                      }
+                    Linkedin.hideLoading();    //隐藏加载动画
+                    Linkedin.setOption({        //加载数据图表
+                        xAxis: {
+                            data: linkedinnames
+                        },
+                        series: [{
+                            // 根据名字对应到相应的系列
+                            name: '数量（条）',
+                            data: linkedinnums
+                        }]
+                    });
+                    
+             }
+         
+        },
+         error : function(errorMsg) {
+             //请求失败时执行该函数
+         alert("图表请求数据失败!");
+         Linkedin.hideLoading();
+         }
+    }); 
+
+	var Twitter = echarts.init(document.getElementById('twitter'));
+         // 显示标题，图例和空的坐标轴
+         Twitter.setOption({
+             title: {
+                 text: 'Twitter采集量'
+             },
+             tooltip: {},
+             legend: {
+                 data:['数量（条）']
+             },
+             xAxis: {
+                 data: []
+             },
+             yAxis: {},
+             series: [{
+                 name: '数量（条）',
+                 type: 'bar',
+                 data: [],
+				 barWidth: 50,
+				 itemStyle:{  
+					normal:{
+						  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+							  offset: 0,
+							  color: '#FF00FF'
+							}, {
+							  offset: 1,
+							  color: '#2294E4'
+							}]),
+							//shadowColor: 'rgba(0, 0, 0, 0.4)',
+							//shadowBlur: 20
+						}
+                    } 
+             }]
+         });
+      
+         Twitter.showLoading();    //数据加载完之前先显示一段简单的loading动画
+         
+         var twitternames=[];    //类别数组（实际用来盛放X轴坐标值）
+         var twitternums=[];    //销量数组（实际用来盛放Y坐标值）
+         
+         $.ajax({
+         type : "get",
+         async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+         url : "http://"+host_node+"/NetCollect/rest/getTwitterCountValue",    //请求发送到TestServlet处
+         data : {},
+         dataType : "json",        //返回数据形式为json
+         success : function(result) {
+             //请求成功时执行该函数内容，result即为服务器返回的json对象
+             if (result) {
+                    for(var i=0;i<result.length;i++){       
+                       twitternames.push(result[i].dateTime);    //挨个取出类别并填入类别数组
+                     }
+                    for(var i=0;i<result.length;i++){       
+                        twitternums.push(result[i].count);    //挨个取出销量并填入销量数组
+                      }
+                    Twitter.hideLoading();    //隐藏加载动画
+                    Twitter.setOption({        //加载数据图表
+                        xAxis: {
+                            data: twitternames
+                        },
+                        series: [{
+                            // 根据名字对应到相应的系列
+                            name: '数量（条）',
+                            data: twitternums
+                        }]
+                    });
+                    
+             }
+         
+        },
+         error : function(errorMsg) {
+             //请求失败时执行该函数
+         alert("图表请求数据失败!");
+         Twitter.hideLoading();
+         }
+    });     
+    </script>
+</body>
+</html>

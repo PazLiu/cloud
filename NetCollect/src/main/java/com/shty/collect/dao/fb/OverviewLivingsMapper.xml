@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shty.collect.dao.fb.OverviewLivingsMapper">
+	<insert id="insert_OverviewLivings" parameterType="com.shty.collect.domain.fb.OverviewLivings"  useGeneratedKeys="true" keyProperty="id">
+		insert into tb_facebook_overview_livings (infoKey,infoValue,FBTarget_id) values
+		(#{infoKey},#{infoValue},#{FBTarget_id})
+	</insert>
+	
+	<delete id="delete_OverviewLivings">
+		delete from tb_facebook_overview_livings where FBTarget_id =
+		#{FBTarget_id}
+	</delete>
+</mapper>

@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Linkedin</title>
+		<link rel="shortcut icon" href="favicon.ico"> 
+        <link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<!-- jqgrid-->
+		<link href="../../css/plugins/jqgrid/ui.jqgridffe4.css?0820" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+		<script type="text/javascript">
+		
+		function addurl(){
+			$("#bturl").append("<input type='text' id='url' name='url' class='form-control uname url' placeholder='请输入目标URL' /><br>");
+		}
+		
+    </script>
+	
+	</head>
+		
+	<body>
+	 <div class="jqGrid_wrapper" style="height:840">
+     
+    
+		<div>
+			<a id = "add_account"  title="添加" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../../image/add.png"/></a>
+			<!-- a id = "edit_account" title="修改" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../image/edit.png"/></a -->
+			<!-- a id = "del_account"  title="删除" role="button" class="btn" > <img src="../image/delete.png"/></a -->
+			<a id = "select_user"  title="刷新" role="button" class="btn" > <img src="../../image/select.png"/></a>
+		</div>
+        
+        <table id="table_list_2"></table>
+	
+		<div id="pager_list_2"></div>
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						
+						<div class="modal fade" id="modal-container-293732" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+											添加任务
+										</h4>
+									</div>
+									<div class="modal-body">
+                                    
+                                    	<div>
+                                            <label for="male">分组：</label>
+                                            <input type="text" id="group" name="group"  class="form-control pword m-b" placeholder="请输入分组" />
+                                         
+                                        </div>
+                                    
+										<div id = "bturl">
+                                            <label for="male">目标URL：</label>
+                                            <input type="text" id="url" name="url" class="form-control uname url" placeholder="请输入目标URL" /><br>
+										</div>
+                                        <div >
+                                        	<button style="margin-top:10px;" class="btn btn-primary" onClick="addurl()">添加</button>
+                                        </div>
+										
+									<div class="modal-footer">
+										 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+										 <button  id = "button_add" type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+									</div>
+								</div>
+							</div>							
+						</div>
+					</div>
+		</div>
+</div>
+			
+	 </div>
+		
+	<script src="../../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../../js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../../js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../../js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script>
+    <script src="../../js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script>
+    <script src="../../js/content.min.js?v=1.0.0"></script>
+	<script src="../../js/my.js"></script>
+	 <script>
+        $(document).ready(function(){
+			$.jgrid.defaults.styleUI="Bootstrap";
+			
+			var value = sessionStorage.getItem("key"); 
+			if (value == null) {
+				alert("您未登录，请登录！");
+				location.href = "../../login.html";
+			} else {
+				var user = $("#user");
+				user.text(value);
+			}
+			
+			
+			$.ajax({
+				url : "http://"+host_node+"/NetCollect/rest/getAllLinkedinPeople",
+				type : "get",
+				dataType : "json",
+				success : function (date) {
+					var id = date.id;
+					var fullname = date.fullname;
+					var lnkid = date.lnkid;
+					var headline = date.headline;
+					var location = date.location;
+					var industry = date.industry;
+					var collectionTime = date.collectionTime;
+					$("#table_list_2").jqGrid(
+					{data:date,datatype:"local",height:380,autowidth:true,shrinkToFit:true,rowNum:10,rowList:[10,20,30],
+					colNames:["序号","姓名","领英ID","简介","地点","行业","采集时间"],
+					colModel:[{name:"id",index:id,editable:true,width:30,search:true,align:'center'},
+					{name:"fullname",index:fullname,editable:true,width:40,align:'center',formatter:cLink},
+					{name:"lnkid",index:lnkid,editable:true,width:30,align:'center'},
+					{name:"headline",index:headline,editable:true,width:70,align:'center'},
+					{name:"location",index:location,editable:true,width:50,align:'center'},
+					{name:"industry",index:industry,editable:true,width:50,align:'center'},
+					{name:"collectionTime",index:collectionTime,editable:true,width:40,align:'center'}],
+					pager:"#pager_list_2",viewrecords:true,sortname : 'id',viewrecords : true,sortorder : "desc",multiselect : true,
+					caption:"数据",add:true,edit:false,addtext:"Add",edittext:"Edit",hidegrid:false});
+					//$("#table_list_2").setSelection(4,true);
+					$("#table_list_2").jqGrid("navGrid","#pager_list_2",{edit:false,add:false,del:false,search:true},{height:200,reloadAfterSubmit:true});
+					$(window).bind("resize",function(){var width=$(".jqGrid_wrapper").width();
+					$("#table_list_2").setGridWidth(width)});
+				},  
+                error: function (msg) {  
+                    alert("加载出错了！");  
+                } 
+				
+			});		
+			
+			//表格中添加a标签的方法
+			function cLink(cellvalue, options, rowObject){
+				var fullname=rowObject.fullname;
+				var id=rowObject.id;
+				return '<a href="http://'+host_node+'/fltcollectandshow/linkedin.html?id='+id+'" id = '+id+' target = _blank>'+fullname+'</a>';
+			}
+			
+			//刷新
+			$("#select_user").click(function(){
+				window.location.reload();
+			})
+			
+			     
+         
+			//用户修改弹窗
+			$("#edit_account").click(function(){
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				var data=$('#table_list_2').jqGrid('getRowData',id);
+				if(data.id==undefined){
+					alert("未选择，请选择！");
+					return false;
+				}
+				var nodeip = data.nodeip;
+				var physicalip = data.physicalip;
+
+				$("#nodeip").val(nodeip);
+				$("#physicalip").val(physicalip);
+			});
+			
+			//用户添加弹窗，清空表单值
+			$("#add_account").click(function(){
+				$("#url").val("");
+				$("#group").val("");
+			});
+			
+			//用户删除
+			$("#del_account").click(function(){
+					var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+					var strid = [];
+					for(i = 0;i < id.length; i++){
+					var data=$('#table_list_2').jqGrid('getRowData',id[i]);
+					strid.push(data.id);
+					}
+					if(strid==""){
+						alert("未选择，请选择！");
+						return false;
+					}
+					var status = confirm("你确定要删除吗？");
+					if(!status){
+						return false;
+					}
+					$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/deleteNode",
+					contentType : "application/json; charset=utf-8",
+					traditional:true,   
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : strid
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("删除成功");
+							location.href="node.html";
+						}else{
+							alert("删除失败！");
+						}
+					}
+				});
+			});
+			//添加，修改的提交
+			$("#button_add").click(function(){
+				var url = new Array();
+				var group = $("#group").val();
+				if(group==""){
+					alert("请正确填写，不能为空！");
+					return false;
+				}
+				
+				$(".url").each(function(index, element) {
+                   url.push($(this).val());
+                });
+				
+				$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/addLinkedinTask",
+					type : "post",
+					datatype : "json",
+					
+					data : {
+						"urlList" : url,
+						"group" : group
+					},
+					traditional: true,
+					success : function (data){
+						if(data.result=="success"){
+							alert("添加成功");
+							window.location.reload();
+						}else{
+						alert("失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+		});
+		
+    </script>
+	
+	</body>
+</html>

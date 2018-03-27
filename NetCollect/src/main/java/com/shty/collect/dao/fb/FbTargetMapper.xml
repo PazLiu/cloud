@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shty.collect.dao.fb.FbTargetMapper">
+	<select id="getFbTarget_urlpattern" parameterType="java.lang.String" resultType="com.shty.collect.domain.fb.FbTarget">
+		select * from tb_facebook_target where urlpattern = #{urlpattern}
+	</select>
+	
+	<update id = "update_FbTarget_urlpattern" parameterType= "com.shty.collect.domain.fb.FbTarget">
+		update tb_facebook_target set fullName = #{fullName},overview = #{overview},imgpath = #{imgpath} where id = #{id}
+	</update>
+	
+	<update id = "update_FbTarget_friendsurl" parameterType= "com.shty.collect.domain.fb.FbTarget">
+		update tb_facebook_target set friendsurl = #{friendsurl} where id = #{id}
+	</update>
+	
+	<update id = "update_FbTarget_photoUrl" parameterType= "com.shty.collect.domain.fb.FbTarget">
+		update tb_facebook_target set photoUrl = #{photoUrl} where id = #{id}
+	</update>
+	
+	
+	<insert id = "insert_FbTarget_urlpattern" parameterType= "com.shty.collect.domain.fb.FbTarget">
+		insert into tb_facebook_target (fullName,imgpath,overview,urlpattern,task_id) values (#{fullName},#{imgpath},#{overview},#{urlpattern},#{task_id})
+	</insert>
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shty.collect.dao.twitter.TimelineMapper">
+    <insert id="insertNew" parameterType="com.shty.collect.domain.twitter.Timeline">
+        INSERT INTO tb_twitter_timeline (id, twid, twContent, twImgURL, twImgName, twUserID, profileID, twUserName, twUserAvatarURL, Tweet, twPubTime, twImgURLSize, twPositionValue)
+        VALUES (#{id}, #{twid}, #{twContent}, #{twImgURL}, #{twImgName}, #{twUserID}, #{profileID}, #{twUserName},
+                       #{twUserAvatarURL}, #{Tweet}, #{twPubTime}, #{twImgURLSize}, #{twPositionValue})
+    </insert>
+    <update id="updateVideoSates" parameterType="Timeline">
+        UPDATE t_timeline t SET
+          t.videoStates = #{videoStates}
+        WHERE t.id = #{id}
+    </update>
+    <select id="findMaxPubTime" parameterType="String" resultType="String">
+        SELECT t.twPubTime
+        FROM t_timeline t
+        WHERE t.profileID = #{profileID}
+        ORDER BY t.twPubTime DESC
+        LIMIT 1
+    </select>
+    <select id="findAll" resultType="Timeline">
+        SELECT *
+        FROM t_timeline
+    </select>
+    <select id= "findMaxValues" parameterType="String" resultType="com.shty.collect.domain.twitter.Timeline">
+    SELECT * FROM tb_twitter_timeline  where twPubTime = (SELECT MAX(twPubTime) FROM tb_twitter_timeline WHERE profileID= #{profileID})
+    </select>
+    <select id= "findMinValues" parameterType="String" resultType="com.shty.collect.domain.twitter.Timeline">
+    SELECT * FROM tb_twitter_timeline  where twPubTime = (SELECT MIN(twPubTime) FROM tb_twitter_timeline WHERE profileID= #{profileID})  
+    </select>
+</mapper>

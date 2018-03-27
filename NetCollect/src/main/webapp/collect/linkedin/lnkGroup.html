@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html>
+		<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Linkedin-分组</title>
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<!-- jqgrid-->
+		<link href="../../css/plugins/jqgrid/ui.jqgridffe4.css?0820" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<style type="text/css">
+.form-control {
+	margin-top: 10px;
+}
+</style>
+		<script type="text/javascript">
+			function myFunction(obj){
+				var ids = obj.id;
+				var namegroup = obj.name;
+				//采用id存入session在任务组详细表根据id查询
+				sessionStorage.setItem("groupid", ids);
+				sessionStorage.setItem("namegroup",namegroup);
+				if(ids!=undefined){
+					location.href="lnkgroupdetail.html?id="+ids+"&namegroup="+namegroup;
+				}else{
+					alert("未选择，请选择！");
+				}
+			}
+			
+			function addKeyword(){
+				$("#keywordlist").append("<input type='text' id='keyword' name='keyword' class='form-control uname keyword' placeholder='请输入关键词'/>");
+			}
+			
+		</script>
+		</head>
+
+		<body>
+<div class="jqGrid_wrapper" style="height:840">
+	<div> 
+        <a id = "add_account"  title="添加" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../../image/add.png"/></a> 
+        <a id = "edit_account" title="修改" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../../image/edit.png"/></a>  
+        <a id = "select_user"  title="刷新" role="button" class="btn" > <img src="../../image/select.png"/></a>
+	</div>
+  
+  
+      <table id="table_list_2">
+      </table>
+        <div id="pager_list_2">
+        </div>
+        <div class="container">
+		<div class="row clearfix">
+        <div class="col-md-12 column">
+        <div class="modal fade" id="modal-container-293732" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+                      <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel"> 任务分组操作 </h4>
+              </div>
+                      <div class="modal-body">
+                <div>
+                          <label for="male">组名：</label>
+                          <input type="text" id="groupname" name="groupname" class="form-control uname" placeholder="请输入分组组名" />
+                          <div id="groupnameid" style="visibility:hidden">1</div>
+                        </div>
+                <div id="keywordlist">
+                          <label for="male">KeyWord：</label>
+                          <input type="text" id="keyword" name="keyword" class="form-control uname keyword" placeholder="请输入关键词" />
+                        </div>
+                <div id = "btKeyword">
+                          <button style="margin-top:10px;" class="btn btn-primary" onClick="addKeyword()">添加</button>
+                        </div>
+              </div>
+                      <div class="modal-footer">
+                <button type = "button" class = "btn btn-default" data-dismiss="modal">关闭</button>
+                <button  id = "button_add" type = "button" class="btn btn-primary" data-dismiss="modal">保存</button>
+                <button  id = "button_update" type = "button" class="btn btn-primary" data-dismiss="modal">修改</button>
+              </div>
+                    </div>
+          </div>
+                </div>
+      </div>
+            </div>
+  </div>
+        </div>
+	<script src="../../js/jquery.min.js?v=2.1.4"></script> 
+    <script src="../../js/bootstrap.min.js?v=3.3.6"></script> 
+    <script src="../../js/plugins/peity/jquery.peity.min.js"></script> 
+    <script src="../../js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script> 
+    <script src="../../js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script> 
+    <script src="../../js/content.min.js?v=1.0.0"></script> 
+	<script src="../../js/my.js"></script>
+    <script>
+        $(document).ready(function(){$.jgrid.defaults.styleUI="Bootstrap";   
+		
+			var value = sessionStorage.getItem("key"); 
+			if (value == null) {
+				alert("您未登录，请登录！");
+				location.href = "../../login.html";
+			} else {
+				var user = $("#user");
+				user.text(value);
+			}	
+						
+		
+			$.ajax({
+				url : "http://"+host_node+"/NetCollect/rest/getLinkedinkeywordgroup",
+				type : "get",
+				dataType : "json",
+				success : function (date) {
+					var id = date.id;
+					var groupName = date.groupName;
+					var groupStatus = date.groupStatus;
+					var creatTime = date.creatTime;
+					var updateTime = date.updateTime;
+					
+					$("#table_list_2").jqGrid(
+					{data:date,datatype:"local",height:430,autowidth:true,shrinkToFit:true,rowNum:10,rowList:[10,20,30],
+					colNames:["序号","组名","组名","状态","创建时间","修改时间"],
+					colModel:[{name:"id",index:id,editable:true,width:10,search:true,align:'center'},
+					{name:"groupName",index:groupName,editable:true,width:50,align:'center',hidden:true},
+					{name:"groupName1",index:groupName,editable:true,width:50,align:'center',formatter:cLink},
+					{name:"groupStatus",index:groupStatus,editable:true,width:20,align:'center',formatter:showStatus},
+					{name:"creatTime",index:creatTime,editable:true,width:20,align:'center'},
+					{name:"updateTime",index:updateTime,editable:true,width:20,align:'center'}],
+					pager:"#pager_list_2",viewrecords:true,sortname : 'id',viewrecords : true,sortorder : "desc",multiselect : true,
+					caption:"Linkedin 关键词分组",add:true,edit:false,addtext:"Add",edittext:"Edit",hidegrid:false});
+					//$("#table_list_2").setSelection(4,true);
+					$("#table_list_2").jqGrid("navGrid","#pager_list_2",{edit:false,add:false,del:false,search:true},{height:200,reloadAfterSubmit:true});
+					$(window).bind("resize",function(){var width=$(".jqGrid_wrapper").width();
+					$("#table_list_2").setGridWidth(width)});
+				},  
+                error: function (msg) {  
+                    alert("加载出错了！");  
+                } 
+			});
+
+			//更改状态
+			function showStatus(cellvalue, options, rowObject){
+				var taskstatus = rowObject.groupStatus;
+				var res ;
+				switch(taskstatus){
+					case '0':
+						res = '未完成';
+						break;
+					case '1':
+						res = '已完成';
+						break;
+					default:
+						res = '正在处理';
+						break;
+					
+				}
+				return res;
+			}
+		
+			//表格中添加a标签的方法
+			function cLink(cellvalue, options, rowObject){
+				var id=rowObject.id;
+				var groupName = rowObject.groupName;
+				return '<a href="javascript:void(0);" id='+id+' name='+groupName+' onclick="myFunction(this);">'+groupName+'</a>';
+			}			
+			
+			//刷新
+			$("#select_user").click(function(){
+				window.location.reload();
+			})			     
+         
+			//任务组修改弹窗
+			$("#edit_account").click(function(){
+				$("#keywordlist").hide();
+				$("#btKeyword").hide();
+				$("#button_add").hide();
+				$("#button_update").show();
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				var data=$('#table_list_2').jqGrid('getRowData',id);
+				var groupname = data.groupName;
+				$("#groupname").val(groupname);
+				$("#groupnameid").val(data.id);
+			});
+			
+			//任务组添加弹窗，清空表单值
+			$("#add_account").click(function(){
+				$("#button_update").hide();
+				$("#button_add").show();
+				$("#groupname").val("");
+			});
+			
+						
+			$("#button_update").click(function(){
+					keywordgroup = $("#groupname").val();
+					id = $("#groupnameid").val();
+				
+					$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/updatelnkKeywordGroup",
+					type : "get",
+					datatype : "json",
+					data : {
+						keywordgroup : keywordgroup,
+						id : id
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("添加成功");
+							window.location.reload();
+						}else{
+						alert("失败，请查看是否填写正确！");
+						}
+					}
+				});				
+			});
+			
+			//添加，修改的提交
+			$("#button_add").click(function(){
+				var groupname = $("#groupname").val();
+				var keyword = ""; 
+				$(".keyword").each(function(index, element) {
+                   keyword += $(this).val() + ",";
+                });
+											
+				$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/addLinkedinkeywordgroup",
+					type : "get",
+					datatype : "json",
+					data : {
+						keywordgroup : groupname,
+						keyword : keyword,
+						id : 0
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("添加成功");
+							window.location.reload();
+						}else{
+						alert("失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+			
+			$("#select_id").click(function(){
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				var data=$('#table_list_2').jqGrid('getRowData',id);
+				var ids = data.id;
+				var namegroup = data.groupName;
+				//采用id存入session在任务组详细表根据id查询
+				sessionStorage.setItem("id", ids);
+				sessionStorage.setItem("namegroup",namegroup);
+				if(ids!=undefined){
+					location.href="lnkgroupdetail.html?id="+ids+"&namegroup="+namegroup;
+				}else{
+					alert("未选择，请选择！");
+				}
+			})
+		});
+		
+		
+		
+    </script>
+</body>
+</html>

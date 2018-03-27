@@ -1,0 +1,452 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Facebook- 属性 - 数据</title>
+		<link rel="shortcut icon" href="favicon.ico"> <link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<!-- jqgrid-->
+		<link href="../../css/plugins/jqgrid/ui.jqgridffe4.css?0820" rel="stylesheet">
+		<link href="../../css/animate.min.css" rel="stylesheet">
+		<link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<link href="../../css/plugins/clockpicker/clockpicker.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../css/jquery-ui.css" />
+		
+	</head>
+		
+	<body>
+	 <div class="jqGrid_wrapper" style="height:840">
+		<div>
+			<a id = "add_account"  title="添加" href="#modal-container-293731" role="button" class="btn" data-toggle="modal"> <img src="../../image/add.png"/></a>
+			<a id = "edit_account" title="修改" href="#modal-container-293731" role="button" class="btn" data-toggle="modal"> <img src="../../image/edit.png"/></a>
+			<a id = "del_account"  title="删除" role="button" class="btn" > <img src="../../image/delete.png"/></a>
+			<a id = "select_user"  title="刷新" role="button" class="btn" > <img src="../../image/select.png"/></a>
+			
+		</div>
+		<table id="table_list_2"></table>
+		<div id="pager_list_2"></div>
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						<div class="modal fade" id="modal-container-293731" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+											属性添加
+										</h4>
+									</div>
+									<div class="modal-body">
+										<div style="display:none">
+										<label for="male">ID：</label>
+											<input type="text" id="id" name="id" class="form-control uname" placeholder="" />
+										</div>
+										<div>
+										<label for="male">星期选择：</label>
+										</div>
+										<div>
+											<label><input id="select_checkbox" type="checkbox" value="全选" />全选</label> 
+											<label><input id="Fruit1" name="Fruit" type="checkbox" value="星期一" /> 星期一</label> 
+											<label><input id="Fruit2" name="Fruit" type="checkbox" value="星期二" />星期二 </label> 
+											<label><input id="Fruit3" name="Fruit" type="checkbox" value="星期三" />星期三 </label> 
+											<label><input id="Fruit4" name="Fruit" type="checkbox" value="星期四" />星期四 </label> 
+											<label><input id="Fruit5" name="Fruit" type="checkbox" value="星期五" />星期五 </label> 
+											<label><input id="Fruit6" name="Fruit" type="checkbox" value="星期六" />星期六 </label> 
+											<label><input id="Fruit7" name="Fruit" type="checkbox" value="星期天" />星期天 </label> 
+										</div>
+										<div style="visibility:hidden">a</div>
+										<div>
+										<label for="male">开始日期：</label>
+										<input placeholder="开始日期" id="startregiontime" value="" class="laydate-icon form-control layer-date"/>
+										</div>			
+										<div>
+										<div style="visibility:hidden">a</div>
+										<label for="male">结束日期：</label>
+										<input placeholder="结束日期" id="endregiontime" value="" class="laydate-icon form-control layer-date"/>
+										</div>
+										<div>
+										<div style="visibility:hidden">a</div>
+										<label for="male">开始时间：</label>
+										 <div class="input-group clockpicker"  data-autoclose="true" >
+                                            <input type="text" id="starttime" placeholder="开始时间" class="form-control" value="">
+                                            <span class="input-group-addon">
+                                            <span class="fa fa-clock-o"></span>
+                                            </span>
+                                        </div>  
+										</div>				
+										<div>
+										<div style="visibility:hidden">a</div>
+										<label for="male">结束时间：</label>
+										 <div class="input-group clockpicker"   data-autoclose="true" >
+                                            <input type="text" id="endtime" placeholder="结束时间" class="form-control" value="">
+                                            <span class="input-group-addon">
+                                            <span class="fa fa-clock-o"></span>
+                                            </span>
+										</div>
+										<div>
+										<div style="visibility:hidden">a</div>
+										<label for="male">下载属性：</label>
+										</div>
+										<div>
+											<label><input id="select_checkboxa"  type="checkbox" value="" />全选</label> 
+											<label><input id="Fruit8" name="Fruita" type="checkbox" value="1" />Overview </label> 
+											<label><input id="Fruit9" name="Fruita" type="checkbox" value="2" />Friends </label> 
+											<label><input id="Fruit10" name="Fruita" type="checkbox" value="3" />Timelin </label> 
+											<label><input id="Fruit11" name="Fruita" type="checkbox" value="4" />Comments </label> 
+											<label><input id="Fruit12" name="Fruita" type="checkbox" value="5" />Likes </label> 
+											<label><input id="Fruit13" name="Fruita" type="checkbox" value="6" />Photos </label> 
+										</div>
+									</div>
+									<div class="modal-footer">
+										 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+										 <button id = "button_add" type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		</div>
+</div>
+			
+	 </div>
+	 <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../../js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../../js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script>
+    <script src="../../js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script>
+    <script src="../../js/content.min.js?v=1.0.0"></script>
+	<script src="../../js/plugins/layer/laydate/laydate.js"></script>
+	<script src="../../js/plugins/clockpicker/clockpicker.js"></script>
+	<script src="../../js/my.js"></script>
+	<script>
+            laydate({elem:"#startregiontime",event:"focus"});laydate({elem:"#endregiontime",event:"focus"});
+    </script> 
+	 <script>
+	 //500
+	    $('.clockpicker').clockpicker({
+			placement: 'top',
+			align: 'left'
+		}); 
+        $(document).ready(function(){$.jgrid.defaults.styleUI="Bootstrap";	
+			var value = sessionStorage.getItem("key"); 
+			if (value == null) {
+				alert("您未登录，请登录！");
+				location.href = "../../login.html";
+			} else {
+				var user = $("#user");
+				user.text(value);
+			}
+			var starttime="";
+			for (var j = 0; j < 24;j++) {
+				starttime += "<option value=\"" + j + "\">"+j+"</option>";
+				$("#starttime").html(starttime);
+				$("#endtime").html(starttime);
+			}
+
+			$.ajax({
+				url : "http://"+host_node+"/NetCollect/rest/getAllattribute",
+				contentType : "application/json; charset=utf-8",
+				type : "get",
+				async : true ,
+				dataType : "json",
+				success : function (date) {
+					var id = date.id;
+					var weekchoice = date.weekchoice;
+					var startregiontime = date.startregiontime;
+					var endregiontime = date.endregiontime;
+					var starttime = date.starttime;
+					var endtime = date.endtime;
+					var downloadattribute = date.downloadattribute;
+					var creattime = date.creattime;
+					var updatetime = date.updatetime;
+					var overview = date.overview;
+					var friends = date.friends;
+					var timelin = date.timelin;
+					var comments = date.comments;
+					var likes = date.likes;
+					var photos = date.photos;
+					
+					$("#table_list_2").jqGrid(
+					{data:date,datatype:"local",height:450,autowidth:true,shrinkToFit:true,rowNum:20,rowList:[10,20,30],
+					colNames:["序号","星期","开始日期","结束日期","开始时间","结束时间","Overview","Friends","Timelin","Comments","Likes","Photos"],
+					colModel:[{name:"id",index:id,editable:true,width:30,search:true,align:'center'},
+					{name:"weekchoice",index:weekchoice,editable:true,width:60,align:'center'},
+					{name:"startregiontime",index:startregiontime,editable:true,width:60,align:'center'},
+					{name:"endregiontime",index:endregiontime,editable:true,width:60,align:'center'},
+					{name:"starttime",index:starttime,editable:true,width:40,align:'center'},
+					{name:"endtime",index:endtime,editable:true,width:40,align:'center'},
+					{name:"overview",index:overview,editable:true,width:30,align:'center'},
+					{name:"friends",index:friends,editable:true,width:30,align:'center'},
+					{name:"timelin",index:timelin,editable:true,width:30,align:'center'},
+					{name:"comments",index:comments,editable:true,width:30,align:'center'},
+					{name:"likes",index:likes,editable:true,width:30,align:'center'},
+					{name:"photos",index:photos,editable:true,width:30,align:'center'}],
+					pager:"#pager_list_2",viewrecords:true,sortname : 'id',viewrecords : true,sortorder : "desc",multiselect : true,
+					caption:"Facebook - 属性 - 数据",add:true,edit:false,addtext:"Add",edittext:"Edit",hidegrid:false});
+					//$("#table_list_2").setSelection(4,true);
+					$("#table_list_2").jqGrid("navGrid","#pager_list_2",{edit:false,add:false,del:false,search:true},{height:200,reloadAfterSubmit:true});
+					$(window).bind("resize",function(){var width=$(".jqGrid_wrapper").width();
+					$("#table_list_2").setGridWidth(width)});
+				},  
+                error: function (msg) {  
+                    alert("加载出错了！");  
+                } 				
+			});		
+			
+			$("#select_user").click(function(){
+				location.href="Facebooktype.html";
+			})
+			
+			//用户修改弹窗
+			$("#edit_account").click(function(){
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				var data=$('#table_list_2').jqGrid('getRowData',id);
+				if(data.id==undefined){
+					alert("未选择，请选择！");
+					return false;
+				}
+				var str = data.weekchoice;
+				var strweekchoice = new Array();
+				strweekchoice = str.split(" ");
+				var i = 0;
+				for(i ; i < strweekchoice.length; i++){	
+					if(i%2==0){
+						if(strweekchoice[i]=="一"){
+							$("#Fruit1").attr("checked", true);
+						}
+						if(strweekchoice[i]=="二"){
+							$("#Fruit2").attr("checked", true);
+						}
+						if(strweekchoice[i]=="三"){
+							$("#Fruit3").attr("checked", true);
+						}
+						if(strweekchoice[i]=="四"){
+							$("#Fruit4").attr("checked", true);
+						}
+						if(strweekchoice[i]=="五"){
+							$("#Fruit5").attr("checked", true);
+						}
+						if(strweekchoice[i]=="六"){
+							$("#Fruit6").attr("checked", true);
+						}
+						if(strweekchoice[i]=="天"){
+							$("#Fruit7").attr("checked", true);
+						}
+					}
+				}
+				var startregiontime = data.startregiontime;
+				var endregiontime= data.endregiontime;
+				var starttime = data.starttime;
+				var endtime= data.endtime;
+				var overview= data.overview;
+				var friends= data.friends;
+				var timelin= data.timelin;
+				var comments= data.comments;
+				var likes= data.likes;
+				var photos= data.photos;
+				if(overview=="下载"){
+					$("#Fruit8").attr("checked", true);
+				}
+				if(friends=="下载"){
+					$("#Fruit9").attr("checked", true);
+				}
+				if(timelin=="下载"){
+					$("#Fruit10").attr("checked", true);
+				}
+				if(comments=="下载"){
+					$("#Fruit11").attr("checked", true);
+				}
+				if(likes=="下载"){
+					$("#Fruit12").attr("checked", true);
+				}
+				if(photos=="下载"){
+					$("#Fruit13").attr("checked", true);
+				}
+				$("#id").val(id);
+				$("#startregiontime").val(startregiontime);
+				$("#endregiontime").val(endregiontime);
+				$("#starttime").val(starttime);
+				$("#endtime").val(endtime);
+			});
+			
+			
+			
+			//用户添加弹窗
+			$("#add_account").click(function(){
+				for(var i = 1;i<=13;i++){
+					$("#Fruit"+i).attr("checked", false);
+				}
+				$("#select_checkboxa").attr("checked", false);
+				$("#select_checkbox").attr("checked", false);
+				$("#select_checkbox").attr("checked", false);
+				$("#id").val("");
+				$("#startregiontime").val("");
+				$("#endregiontime").val("");
+				$("#starttime").val("");
+				$("#endtime").val("");
+			});
+			
+			//用户删除
+			$("#del_account").click(function(){
+					var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+					var strid = [];
+					for(i = 0;i < id.length; i++){
+					var data=$('#table_list_2').jqGrid('getRowData',id[i]);
+					strid.push(data.id);
+					}
+					if(strid==""){
+						alert("未选择，请选择！");
+						return false;
+					}
+					var status = confirm("你确定要删除吗？");
+					if(!status){
+						return false;
+					}
+					$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/deleteAttribute",
+					contentType : "application/json; charset=utf-8",
+					traditional:true,   
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : strid
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("删除成功");
+							location.href="Facebooktype.html";
+						}else{
+						alert("添加失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+			
+			$("#button_add").click(function(){
+				var id = $("#id").val();
+				var text = "";
+				var texta = "";
+				$('input[name="Fruit"]:checked').each(function(){
+					text=text+","+$(this).val();
+                });
+				$('input[name="Fruita"]:checked').each(function(){
+					texta=texta+","+$(this).val();
+                });
+				var startregiontime = $("#startregiontime").val();
+				var endregiontime = $("#endregiontime").val();
+				var starttime = $("#starttime").val();
+				var endtime = $("#endtime").val();
+				$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/addAttribute",
+					contentType : "application/json; charset=utf-8",
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : id,
+						weekchoice : text,
+						strdownload : texta,
+						startregiontime : startregiontime,
+						endregiontime : endregiontime,
+						starttime : starttime,
+						endtime : endtime
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("成功");
+							location.href="Facebooktype.html";
+						}else{
+						alert("添加失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+			
+			
+			$("#button_edit").click(function(){
+				var id = $("#id").val();
+				var text = "";
+				var texta = "";
+				$('input[name="Fruit"]:checked').each(function(){
+					text=text+","+$(this).val();
+                });
+				$('input[name="Fruita"]:checked').each(function(){
+					texta=texta+","+$(this).val();
+                });
+				var startregiontime = $("#startregiontime").val();
+				var endregiontime = $("#endregiontime").val();
+				var starttime = $("#starttime").val();
+				var endtime = $("#endtime").val();
+				$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/addAttribute",
+					contentType : "application/json; charset=utf-8",
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : id,
+						weekchoice : text,
+						strdownload : texta,
+						startregiontime : startregiontime,
+						endregiontime : endregiontime,
+						starttime : starttime,
+						endtime : endtime
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("添加成功");
+							location.href="Facebooktype.html";
+						}else{
+						alert("添加失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+			
+			
+			var isCheckAll = false;
+			$("#select_checkbox").click(function(){
+					if (isCheckAll) {  
+						$("input[name=Fruit]").each(function() {  
+							this.checked = false;  
+						});  
+						isCheckAll = false;  
+					} else {  
+						$("input[name=Fruit]").each(function() {  
+							this.checked = true;  
+						});  
+						isCheckAll = true;  
+					}  
+					
+			});
+			
+			var isCheckAlla = false;
+			$("#select_checkboxa").click(function(){
+					if (isCheckAlla) {  
+						$("input[name=Fruita]").each(function() {  
+							this.checked = false;  
+							
+						});  
+						isCheckAlla = false;  
+					} else {  
+						$("input[name=Fruita]").each(function() {  
+							this.checked = true;  
+							
+						});  
+						isCheckAlla = true;  
+					}  
+					
+			});
+			
+		// $("#add_table_list_2").append	("<td class="ui-pg-button" title="编辑" id="edit1_table_list"><div class="ui-pg-div"><span class="glyphicon glyphicon-plus"></span></div></td>");
+		});
+		
+		
+		
+    </script>
+	</body>
+
+</html>

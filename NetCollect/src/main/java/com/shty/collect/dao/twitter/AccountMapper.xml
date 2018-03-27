@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shty.collect.dao.twitter.AccountMapper">
+    <insert id="insertNew" parameterType="Account">
+        INSERT INTO t_account (account,password)
+        VALUES (#{account}, #{password})
+    </insert>
+    <select id="findAll" resultType="Account">
+        SELECT t.*
+        FROM t_account t
+        WHERE t.Valid = 1
+    </select>
+</mapper>

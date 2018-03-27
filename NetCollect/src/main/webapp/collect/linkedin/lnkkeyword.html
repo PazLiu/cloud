@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任务</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="../../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <!-- jqgrid-->
+    <link href="../../css/plugins/jqgrid/ui.jqgridffe4.css?0820" rel="stylesheet">
+    <link href="../../css/animate.min.css" rel="stylesheet">
+    <link href="../../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../../js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script>
+    <script src="../../js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script>
+    <script src="../../js/content.min.js"></script>
+	<script src="../../js/my.js"></script>
+    </head>
+
+    <body>
+<div class="jqGrid_wrapper" style="height:840">
+<div> <a id = "add_account"  title="添加" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../../image/add.png"/></a> 
+      <!-- a id = "edit_account" title="修改" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../image/edit.png"/></a --> 
+      <!-- a id = "del_account"  title="删除" role="button" class="btn" > <img src="../image/delete.png"/></a --> 
+      <a id = "select_user"  title="刷新" role="button" class="btn" > <img src="../../image/select.png"/></a> </div>
+
+<table id="table_list_2">
+    </table>
+<div id="pager_list_2"></div>
+<div class="container">
+      <div class="row clearfix">
+    <div class="col-md-12 column">
+          <div class="modal fade" id="modal-container-293732" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+              <div class="modal-content">
+            <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title" id="myModalLabel"> 添加关键词 </h4>
+                </div>
+            <div class="modal-body">
+                  <div>
+                <label for="male">分组：</label>
+                <!-- input type="text" id="url" name="url" class="form-control uname" placeholder="请入组名" / -->
+                
+                <select id="keywordgroup" name="keywordgroup" class="form-control uname" >
+                    </select>
+              </div>
+                  <div style="margin-top:20px">
+                <label for="male">keyword：</label>
+                <input type="text" id="keyword" name="keyword"  class="form-control pword m-b" placeholder="多个关键词请用英文逗号隔开"/>
+                <div style="visibility:hidden">1</div>
+              </div>
+                  <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button  id = "button_add" type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+              </div>
+                </div>
+          </div>
+            </div>
+      </div>
+        </div>
+  </div>
+    </div>
+<script>
+        $(document).ready(function(){$.jgrid.defaults.styleUI="Bootstrap";
+	        var value = sessionStorage.getItem("key"); 
+			if (value == null) {
+				alert("您未登录，请登录！");
+				location.href = "../../login.html";
+			} else {
+				var user = $("#user");
+				user.text(value);
+			}
+        
+			$.ajax({
+				url : "http://"+host_node+"/NetCollect/rest/getLinkedinkeyword",
+				contentType : "application/json; charset=utf-8",
+				type : "get",
+				async : true ,
+				dataType : "json",
+				success : function (date) {
+					var id = date.id;
+					var finished = date.finished;
+					var groupName = date.groupName;
+					var keyword = date.keyword;
+					var createtime = date.createtime;
+					var updatatime = date.updatatime;
+					$("#table_list_2").jqGrid(
+					{data:date,datatype:"local",height:380,autowidth:true,shrinkToFit:true,rowNum:10,rowList:[10,20,30],
+					colNames:["序号","状态","组名","关键词","创建时间","修改时间"],
+					colModel:[{name:"id",index:id,editable:true,width:30,search:true,align:'center'},
+					{name:"finished",index:finished,editable:true,width:20,align:'center'},
+					{name:"groupName",index:groupName,editable:true,width:30,align:'center'},
+					{name:"keyword",index:keyword,editable:true,width:50,align:'center'},
+					{name:"createtime",index:createtime,editable:true,width:50,align:'center'},
+					{name:"updatatime",index:updatatime,editable:true,width:20,align:'center'}],
+					pager:"#pager_list_2",viewrecords:true,sortname : 'id',viewrecords : true,sortorder : "desc",multiselect : true,
+					caption:"搜索",add:true,edit:false,addtext:"Add",edittext:"Edit",hidegrid:false});
+					//$("#table_list_2").setSelection(4,true);
+					$("#table_list_2").jqGrid("navGrid","#pager_list_2",{edit:false,add:false,del:false,search:true},{height:200,reloadAfterSubmit:true});
+					$(window).bind("resize",function(){var width=$(".jqGrid_wrapper").width();
+					$("#table_list_2").setGridWidth(width)});
+				},  
+                error: function (msg) {  
+                    alert("加载出错了！");  
+                } 
+				
+			});	
+			
+			
+			//动态加载下拉任务组名数据
+			 $.ajax({  
+                url: "http://"+host_node+"/NetCollect/rest/getLinkedinkeywordgroup",    //后台webservice里的方法名称  
+                type: "get",
+                dataType: "json",  
+                success: function (date) {  
+					var optionstring = "";
+					for (var j = 0; j < date.length;j++) {				
+						optionstring += "<option value=\"" + date[j].id + "\" >" +date[j].groupName+ "</option>";
+						$("#keywordgroup").html("<option value='0'>请选择...</option> "+optionstring);
+					}  
+                } 
+            });	
+			
+			//刷新
+			$("#select_user").click(function(){
+				window.location.reload();
+			})
+			
+			     
+         
+			//用户修改弹窗
+			$("#edit_account").click(function(){
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				var data=$('#table_list_2').jqGrid('getRowData',id);
+				if(data.id==undefined){
+					alert("未选择，请选择！");
+					return false;
+				}
+				var nodeip = data.nodeip;
+				var physicalip = data.physicalip;
+
+				$("#nodeip").val(nodeip);
+				$("#physicalip").val(physicalip);
+			});
+			
+			//用户添加弹窗，清空表单值
+			$("#add_account").click(function(){
+				$("#keyword").val("");
+				$("#keywordgroup").selectedIndex = 0;
+				
+			});
+			
+			//用户删除
+			$("#del_account").click(function(){
+					var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+					var strid = [];
+					for(i = 0;i < id.length; i++){
+					var data=$('#table_list_2').jqGrid('getRowData',id[i]);
+					strid.push(data.id);
+					}
+					if(strid==""){
+						alert("未选择，请选择！");
+						return false;
+					}
+					var status = confirm("你确定要删除吗？");
+					if(!status){
+						return false;
+					}
+					$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/deleteNode",
+					contentType : "application/json; charset=utf-8",
+					traditional:true,   
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : strid
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("删除成功");
+							location.href="node.html";
+						}else{
+							alert("删除失败！");
+						}
+					}
+				});
+			});
+			
+			//添加，修改的提交
+			$("#button_add").click(function(){
+				var keywordgroup = $("#keywordgroup").text();
+				var id = $("#keywordgroup").val();
+				var keyword = $("#keyword").val();
+				if(keyword=="" || id == 0){
+					alert("请正确填写，不能为空！");
+					return false;
+				}
+				$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/addLinkedinkeywordgroup",
+					type : "get",
+					datatype : "json",
+					data : {
+						keywordgroup : keywordgroup,
+						keyword : keyword,
+						id : id
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("添加成功");
+							window.location.reload();
+						}else{
+						alert("失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+		});
+		
+    </script>
+</body>
+</html>

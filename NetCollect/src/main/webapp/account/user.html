@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Node 节点 - 数据</title>
+		<link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<!-- jqgrid-->
+		<link href="../css/plugins/jqgrid/ui.jqgridffe4.css?0820" rel="stylesheet">
+		<link href="../css/animate.min.css" rel="stylesheet">
+		<link href="../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+	</head>
+		
+	<body>
+	 <div class="jqGrid_wrapper" style="height:840">
+		<div>
+			<a id = "add_account"  title="添加" href="#modal-container-293731" role="button" class="btn" data-toggle="modal"> <img src="../image/add.png"/></a>
+			<a id = "edit_account" title="修改" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../image/edit.png"/></a>
+			<a id = "del_account"  title="删除" role="button" class="btn" > <img src="../image/delete.png"/></a>
+			<a id = "select_user"  title="刷新" role="button" class="btn" > <img src="../image/select.png"/></a>
+		</div>
+		<table id="table_list_2"></table>
+		<div id="pager_list_2"></div>
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						<div class="modal fade" id="modal-container-293731" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+											用户添加
+										</h4>
+									</div>
+									<div class="modal-body">
+										<div>
+										<label for="male">用户名：</label>
+										<input type="text" id="user" name="user" class="form-control uname" placeholder="请输入用户名" />
+										</div>
+										<div>
+										<label for="male">密&nbsp;码：</label>
+										<input type="password" id="password" name="password"  class="form-control pword m-b" placeholder="请输入密码" />
+										</div>
+										<div>
+										<label for="male">权&nbsp;限：</label>
+										<select id="accounttype" style="width : 100px;height : 30px;">
+											<option value="0">请选择...</option>
+											<option value="1">管理员</option>
+											<option value="2">系统管理员</option>
+											<option value="3">用户</option>
+										</select>
+										</div>
+									</div>
+									<div class="modal-footer">
+										 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+										 <button id = "button_add" type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+						
+						
+						<div class="modal fade" id="modal-container-293732" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+											用户编辑
+										</h4>
+									</div>
+									<div class="modal-body">
+										<div style="display:none">
+										<label for="male">ID：</label>
+										<input type="text" id="userid" name="id" class="form-control uname" placeholder="请输入用户名" />
+										</div>
+										<div>
+										<label for="male">用户名：</label>
+										<input type="text" id="useruser" name="user" class="form-control uname" placeholder="请输入用户名" />
+										</div>
+										<div>
+										<label for="male">密&nbsp;码：</label>
+										<input type="password" id="userpassword" name="password"  class="form-control pword m-b" placeholder="请输入密码" />
+										</div>
+										<div>
+										<label for="male">权&nbsp;限：</label>
+										<select id="accounttype1" style="width : 100px;height : 30px;">
+											<option value="0">请选择...</option>
+											<option value="1">管理员</option>
+											<option value="2">系统管理员</option>
+											<option value="3">用户</option>
+										</select>
+										</div>
+									</div>
+									<div class="modal-footer">
+										 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+										 <button  id = "button_edit" type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+		</div>
+</div>
+			
+	 </div>
+		
+	<script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script>
+    <script src="../js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script>
+    <script src="../js/content.min.js?v=1.0.0"></script>
+	<script src="../js/my.js"></script>
+	 <script>
+        $(document).ready(function(){$.jgrid.defaults.styleUI="Bootstrap";
+	        var value = sessionStorage.getItem("key");
+			if (value == null) {
+				alert("您未登录，请登录！");
+				location.href = "../login.html";
+			} else {
+				var user = $("#user");
+				user.text(value);
+			}
+        
+        
+			$.ajax({
+				url : "http://"+host_node+"/NetCollect/rest/getAlluser",
+				contentType : "application/json; charset=utf-8",
+				type : "get",
+				async : true ,
+				dataType : "json",
+				success : function (date) {
+					var id = date.id;
+					var user = date.user;
+					var password = date.password;
+					var authority = date.authority;
+					var creattime = date.creattime;
+					var updatetime = date.updatetime;
+					$("#table_list_2").jqGrid(
+					{data:date,datatype:"local",height:450,autowidth:true,shrinkToFit:true,rowNum:20,rowList:[10,20,30],
+					colNames:["序号","用户名","密码","权限","创建时间","修改时间"],
+					colModel:[{name:"id",index:id,editable:true,width:30,search:true,align:'center'},
+					{name:"user",index:user,editable:true,width:90,align:'center'},
+					{name:"password",index:password,editable:true,width:100,align:'center'},
+					{name:"authority",index:authority,editable:true,width:80,align:'center'},
+					{name:"creattime",index:creattime,editable:true,width:80,align:'center'},
+					{name:"updatetime",index:updatetime,editable:true,width:80,align:'center'}],
+					pager:"#pager_list_2",viewrecords:true,sortname : 'id',viewrecords : true,sortorder : "desc",multiselect : true,
+					caption:"管理员数据",add:true,edit:false,addtext:"Add",edittext:"Edit",hidegrid:false});
+					//$("#table_list_2").setSelection(4,true);
+					$("#table_list_2").jqGrid("navGrid","#pager_list_2",{edit:false,add:false,del:false,search:true},{height:200,reloadAfterSubmit:true});
+					$(window).bind("resize",function(){var width=$(".jqGrid_wrapper").width();
+					$("#table_list_2").setGridWidth(width)});
+				},  
+                error: function (msg) {  
+                    alert("加载出错了！");  
+                } 				
+			});		
+			
+			$("#select_user").click(function(){
+				location.href="user.html";
+			})
+			
+			
+			//用户修改弹窗
+			$("#edit_account").click(function(){
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				var data=$('#table_list_2').jqGrid('getRowData',id);
+				if(data.id==undefined){
+					alert("未选择，请选择！");
+					return false;
+				}
+				var user = data.user;
+				var password = data.password;
+				var authority= data.authority;
+				if(authority=="管理员"){
+					authority = 1;
+				}
+				else if(authority=="系统管理员"){
+					authority = 2;
+				}
+				else if(authority=="用户"){
+					authority = 3;
+				}
+				$("#userid").val(id);
+				$("#useruser").val(user);
+				$("#userpassword").val(password);
+				$("#accounttype1").val(authority);
+			});
+			
+			
+			
+			//用户添加弹窗
+			$("#add_account").click(function(){
+				$("#userid").val("");
+				$("#useruser").val("");
+				$("#userpassword").val("");
+				$("#accounttype").val("0");
+			});
+			
+			//用户删除
+			$("#del_account").click(function(){
+					var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+					var strid = [];
+					for(i = 0;i < id.length; i++){
+					var data=$('#table_list_2').jqGrid('getRowData',id[i]);
+					strid.push(data.id);
+					}
+					if(strid==""){
+						alert("未选择，请选择！");
+						return false;
+					}
+					var status = confirm("你确定要删除吗？");
+					if(!status){
+						return false;
+					}
+					$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/deleteAccount",
+					contentType : "application/json; charset=utf-8",
+					traditional:true,   
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : strid
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("删除成功");
+							location.href="user.html";
+						}else{
+						alert("添加失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+			
+			$("#button_add").click(function(){
+				var id = null;
+				var user = $("#user").val();
+				var password = $("#password").val();
+				var authority = $("#authority").val();
+				if(user==""||password==""){
+					alert("用户名或密码不能为空！");
+					return false;
+				}
+				if(authority=="0"){
+					alert("权限不能为空！");
+					return false;
+				}
+				$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/adduserAccount",
+					contentType : "application/json; charset=utf-8",
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : id,
+						user : user,
+						password : password,
+						authority : authority
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("添加成功");
+							location.href="user.html";
+						}else{
+						alert("添加失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+			
+			
+			$("#button_edit").click(function(){
+				var id = $("#userid").val();
+				var user = $("#useruser").val();
+				var password = $("#userpassword").val();
+				var authority = $("#accounttype1").val();
+				if(user==""&&password==""){
+					alert("用户名或密码不能为空！");
+					return false;
+				}
+				if(authority=="0"){
+					alert("权限不能为空！");
+					return false;
+				}
+				$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/adduserAccount",
+					contentType : "application/json; charset=utf-8",
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : id,
+						user : user,
+						password : password,
+						authority : authority
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("编辑成功");
+							location.href="user.html";
+						}else{
+						alert("添加失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+		// $("#add_table_list_2").append	("<td class="ui-pg-button" title="编辑" id="edit1_table_list"><div class="ui-pg-div"><span class="glyphicon glyphicon-plus"></span></div></td>");
+		});
+		
+		
+		
+    </script>
+	
+	</body>
+</html>

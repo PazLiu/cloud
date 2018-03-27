@@ -1,0 +1,1175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="JavaWeb:war exploded" />
+      <artifact name="mavenTest:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="48cdf893-063b-4973-aded-205fb390a81c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NetCollect/NetCollect.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NetCollect/src/main/main.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/TbCountMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/TbCountMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/TbSystemHttpMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/TbSystemHttpMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/TbSystemImportExeclMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/TbSystemImportExeclMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/FBPhotoMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/FBPhotoMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/FbOverviewWorkMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/FbOverviewWorkMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/FbTargetMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/FbTargetMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/FriendsMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/FriendsMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewBackgroungMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewBackgroungMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewContactsMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewContactsMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewEducationMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewEducationMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewFamilyMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewFamilyMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewLivingsMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewLivingsMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewSkillsMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewSkillsMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewWorkdescriptionsMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/OverviewWorkdescriptionsMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/TimelineCommentMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/TimelineCommentMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/TimelineStoryMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/TimelineStoryMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/TimelineStoryimgCodeListMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/TimelineStoryimgCodeListMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/TimelineYearMapper.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/fb/TimelineYearMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/TbSystemHttp.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/TbSystemHttp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/TbTwitterCount.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/TbTwitterCount.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/FBPhoto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/FBPhoto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/FbOverviewWork.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/FbOverviewWork.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/FbTarget.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/FbTarget.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewBackgroung.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewBackgroung.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewBackgroungDescriptions.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewBackgroungDescriptions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewContacts.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewContacts.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewEducation.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewEducation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewEducationDescriptions.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewEducationDescriptions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewFamily.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewFamily.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewLivings.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewLivings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewSkills.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewSkills.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewWorkdescriptions.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/OverviewWorkdescriptions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/TimelineComment.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/TimelineComment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/TimelineStory.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/TimelineStory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/TimelineStoryimgCodeList.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/TimelineStoryimgCodeList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/TimelineYear.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/fb/TimelineYear.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/lnk/Task.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/domain/lnk/Task.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/BasicAuthenticator.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/BasicAuthenticator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/FacebookTest.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/FacebookTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/Facebook_FriendsThread.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/Facebook_FriendsThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/Facebook_Group_id_Test.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/Facebook_Group_id_Test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/Facebook_PhotoThread.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/Facebook_PhotoThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/Facebook_Status.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/Facebook_Status.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/Facebook_TimelineThread.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/fb/test/Facebook_TimelineThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/mail/MailAuthenticator.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/mail/MailAuthenticator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/mail/MailSender.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/mail/MailSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/IPAccountServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/IPAccountServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/Linkedin_taskServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/Linkedin_taskServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/SystemCountValueServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/SystemCountValueServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/SystemImportExeclI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/SystemImportExeclI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_AccountServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_AccountServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_Facebook_TaskServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_Facebook_TaskServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_Facebook_TaskattributeService.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_Facebook_TaskattributeService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_Facebook_TaskgroupService.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_Facebook_TaskgroupService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_LimitServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_LimitServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_NodeServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_NodeServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_RelationServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_RelationServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_Twitter_TaskAttributeServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_Twitter_TaskAttributeServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_Twitter_TaskGroupServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_Twitter_TaskGroupServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_Twitter_TaskServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_Twitter_TaskServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_linkaccountServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_linkaccountServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_linkedin_keywordGroupI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_linkedin_keywordGroupI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_linkedin_keywordI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_linkedin_keywordI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_userServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/System_userServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/TbSystemHttpServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/TbSystemHttpServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/ThridTaskServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/ThridTaskServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/FBPhoto_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/FBPhoto_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/FbOverviewWork_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/FbOverviewWork_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/FbTarget_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/FbTarget_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/Friends_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/Friends_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewBackgroung_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewBackgroung_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewContacts_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewContacts_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewEducation_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewEducation_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewFamily_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewFamily_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewLivings_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewLivings_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewSkills_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewSkills_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewWorkdescriptions_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/OverviewWorkdescriptions_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/TimelineComment_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/TimelineComment_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/TimelineStory_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/TimelineStory_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/TimelineStoryimgCodeList_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/TimelineStoryimgCodeList_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/TimelineYear_ServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/TimelineYear_ServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/FBPhoto_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/FBPhoto_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/FbOverviewWork_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/FbOverviewWork_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/FbTarget_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/FbTarget_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/Friends_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/Friends_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewBackgroung_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewBackgroung_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewContacts_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewContacts_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewEducation_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewEducation_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewFamily_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewFamily_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewLivings_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewLivings_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewSkills_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewSkills_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewWorkdescriptions_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/OverviewWorkdescriptions_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/TimeLineYear_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/TimeLineYear_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/TimelineComment_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/TimelineComment_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/TimelineStory_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/TimelineStory_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/TimelineStoryimgCodeList_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/fb/impl/TimelineStoryimgCodeList_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/IPAccountServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/IPAccountServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/Linkedin_taskServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/Linkedin_taskServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/SystemCountValueImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/SystemCountValueImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/SystemImportExeclImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/SystemImportExeclImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_AccountServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_AccountServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_Facebook_ServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_Facebook_ServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_Facebook_TaskattributeService.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_Facebook_TaskattributeService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_Facebook_TaskgroupServiceI.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_Facebook_TaskgroupServiceI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_LimitServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_LimitServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_NodeServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_NodeServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_RelationServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_RelationServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_Twitter_TaskAttributeServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_Twitter_TaskAttributeServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_Twitter_TaskGroupServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_Twitter_TaskGroupServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_Twitter_TaskServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_Twitter_TaskServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_linkaccountServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_linkaccountServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_linkedin_keywordGroupImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_linkedin_keywordGroupImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_linkedin_keywordImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_linkedin_keywordImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_userServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/System_userServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/TbSystemHttpServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/TbSystemHttpServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/ThirdTaskServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/ThirdTaskServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/lnk/LnkAccountService.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/lnk/LnkAccountService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/lnk/impl/LnkAccountServiceImpl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/lnk/impl/LnkAccountServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/test/MailTest.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/test/MailTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/twitter/task/TwitterNodeStatus.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/twitter/task/TwitterNodeStatus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/twitter/task/TwitterTask.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/twitter/task/TwitterTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/twitter/task/TwitterTimelineThread.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/twitter/task/TwitterTimelineThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/util/FileUpload.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/util/FileUpload.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/util/MyStringUtils.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/util/MyStringUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/util/SystemReadExecl.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/util/SystemReadExecl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/Filter/ThirdFilter.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/Filter/ThirdFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/LnkController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/LnkController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/SystemCountValueController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/SystemCountValueController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/SystemImportExcelController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/SystemImportExcelController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/SystemThirdTaskController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/SystemThirdTaskController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Facebook_TaskController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Facebook_TaskController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Facebook_TaskattributeController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Facebook_TaskattributeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Facebook_TaskgroupController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Facebook_TaskgroupController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_GetAccount.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_GetAccount.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_GetLinkedinTaskController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_GetLinkedinTaskController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_GetTaskController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_GetTaskController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_ReationController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_ReationController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Twitter_GetTask.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Twitter_GetTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Twitter_TaskAttributeController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Twitter_TaskAttributeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Twitter_TaskController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Twitter_TaskController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Twitter_TaskGroupController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Twitter_TaskGroupController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Twitter_nodeController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Twitter_nodeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_httpController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_httpController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_linkaccountController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_linkaccountController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_nodeController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_nodeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_socialaccountController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_socialaccountController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_sociallimitController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_sociallimitController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_userController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_userController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/TwitterController.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/TwitterController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/CollectAccountDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/CollectAccountDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/GroupOrginizationDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/GroupOrginizationDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/IPAccountDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/IPAccountDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/LinkedCountDayDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/LinkedCountDayDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/LinkedinKeywordDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/LinkedinKeywordDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/LnkCollectDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/LnkCollectDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/LnkKeywordGroupDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/LnkKeywordGroupDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/LnkPeopleDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/LnkPeopleDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/LnkTaskDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/LnkTaskDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/Syste_Facebook_Task_Attribute_Group.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/Syste_Facebook_Task_Attribute_Group.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_Facebook_Taskattribute_Dto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_Facebook_Taskattribute_Dto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_GroupAnd_AttributeDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_GroupAnd_AttributeDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_HttpDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_HttpDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_NodeDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_NodeDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_Node_Socialacount_LinkaccountDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_Node_Socialacount_LinkaccountDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_Twitter_TaskGroupAttrDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_Twitter_TaskGroupAttrDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_Twitter_TaskGroupDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_Twitter_TaskGroupDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_UserDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_UserDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_socialAccountDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/System_socialAccountDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/Task_StatusDto.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/dto/Task_StatusDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/thirdApp/ThirdUserInfo.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/thirdApp/ThirdUserInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/webSocket/WebSocket.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/webSocket/WebSocket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/webSocket/WebSocketConfig.java" afterPath="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/webSocket/WebSocketConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/resources/spring/application-context.xml" afterPath="$PROJECT_DIR$/NetCollect/src/main/resources/spring/application-context.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/resources/systemconfig.properties" afterPath="$PROJECT_DIR$/NetCollect/src/main/resources/systemconfig.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/css/bootstrap-theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/css/bootstrap-theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/js/npm.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/bootstrap/js/npm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/animate.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/animate.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/bootstrap.min14ed.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/bootstrap.min14ed.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/demo/webuploader-demo.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/demo/webuploader-demo.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/font-awesome.min93e3.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/font-awesome.min93e3.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/login.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/login.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/blueimp/css/blueimp-gallery.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/blueimp/css/blueimp-gallery.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/blueimp/img/error.svg" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/blueimp/img/error.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/blueimp/img/play-pause.svg" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/blueimp/img/play-pause.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/blueimp/img/video-play.svg" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/blueimp/img/video-play.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/bootstrap-table/bootstrap-table.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/bootstrap-table/bootstrap-table.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/chosen/chosen.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/chosen/chosen.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/clockpicker/clockpicker.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/clockpicker/clockpicker.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/codemirror/ambiance.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/codemirror/ambiance.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/codemirror/codemirror.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/codemirror/codemirror.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/colorpicker/css/bootstrap-colorpicker.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/colorpicker/css/bootstrap-colorpicker.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/cropper/cropper.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/cropper/cropper.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/dataTables/dataTables.bootstrap.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/dataTables/dataTables.bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/datapicker/datepicker3.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/datapicker/datepicker3.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/dropzone/basic.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/dropzone/basic.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/dropzone/dropzone.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/dropzone/dropzone.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/footable/fonts/footable.svg" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/footable/fonts/footable.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/footable/footable.core.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/footable/footable.core.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/fullcalendar/fullcalendar.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/fullcalendar/fullcalendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/fullcalendar/fullcalendar.print.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/fullcalendar/fullcalendar.print.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/iCheck/custom.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/iCheck/custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/ionRangeSlider/ion.rangeSlider.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/ionRangeSlider/ion.rangeSlider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/jasny/jasny-bootstrap.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/jasny/jasny-bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/jqgrid/ui.jqgridffe4.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/jqgrid/ui.jqgridffe4.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/jsTree/style.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/jsTree/style.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/markdown/bootstrap-markdown.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/markdown/bootstrap-markdown.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/morris/morris-0.4.3.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/morris/morris-0.4.3.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/nouslider/jquery.nouislider.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/nouslider/jquery.nouislider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/plyr/plyr.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/plyr/plyr.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/plyr/sprite.svg" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/plyr/sprite.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/simditor/simditor.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/simditor/simditor.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/steps/jquery.steps.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/steps/jquery.steps.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/summernote/summernote-bs3.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/summernote/summernote-bs3.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/summernote/summernote.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/summernote/summernote.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/sweetalert/sweetalert.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/sweetalert/sweetalert.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/switchery/switchery.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/switchery/switchery.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/toastr/toastr.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/toastr/toastr.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/treeview/bootstrap-treeview.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/treeview/bootstrap-treeview.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/webuploader/webuploader.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/plugins/webuploader/webuploader.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/style.min.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/style.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/style.min862f.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/css/style.min862f.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/fonts/fontawesome-webfont93e3.svg" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/fonts/fontawesome-webfont93e3.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/contabs.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/contabs.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/content.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/content.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/bootstrap-table-demo.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/bootstrap-table-demo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/echarts-demo.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/echarts-demo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/flot-demo.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/flot-demo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/form-advanced-demo.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/form-advanced-demo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/form-validate-demo.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/form-validate-demo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/layer-demo.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/layer-demo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/morris-demo.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/morris-demo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/peity-demo.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/peity-demo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/rickshaw-demo.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/rickshaw-demo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/sparkline-demo.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/sparkline-demo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/treeview-demo.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/treeview-demo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/webuploader-demo.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/demo/webuploader-demo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/echarts.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/echarts.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/hplus.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/hplus.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/jquery-ui-1.10.4.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/jquery-ui-1.10.4.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/jquery-ui-slide.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/jquery-ui-slide.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/jquery-ui.custom.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/jquery-ui.custom.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/beautifyhtml/beautifyhtml.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/beautifyhtml/beautifyhtml.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/blueimp/jquery.blueimp-gallery.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/blueimp/jquery.blueimp-gallery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/bootstrap-table/bootstrap-table.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/bootstrap-table/bootstrap-table.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/chartJs/Chart.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/chartJs/Chart.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/chosen/chosen.jquery.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/chosen/chosen.jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/clockpicker/clockpicker.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/clockpicker/clockpicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/codemirror/codemirror.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/codemirror/codemirror.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/codemirror/mode/javascript/javascript.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/codemirror/mode/javascript/javascript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/colorpicker/bootstrap-colorpicker.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/colorpicker/bootstrap-colorpicker.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/cropper/cropper.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/cropper/cropper.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/dataTables/dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/dataTables/dataTables.bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/dataTables/jquery.dataTables.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/dataTables/jquery.dataTables.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/datapicker/bootstrap-datepicker.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/datapicker/bootstrap-datepicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/diff_match_patch/diff_match_patch.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/diff_match_patch/diff_match_patch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/dropzone/dropzone.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/dropzone/dropzone.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/easypiechart/jquery.easypiechart.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/easypiechart/jquery.easypiechart.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/echarts/echarts-all.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/echarts/echarts-all.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/fancybox/jquery.fancybox.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/fancybox/jquery.fancybox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/fancybox/jquery.fancybox.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/fancybox/jquery.fancybox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/curvedLines.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/curvedLines.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/jquery.flot.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/jquery.flot.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/jquery.flot.pie.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/jquery.flot.pie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/jquery.flot.resize.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/jquery.flot.resize.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/jquery.flot.spline.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/jquery.flot.spline.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/jquery.flot.symbol.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/jquery.flot.symbol.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/jquery.flot.tooltip.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/flot/jquery.flot.tooltip.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/footable/footable.all.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/footable/footable.all.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/fullcalendar/fullcalendar.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/fullcalendar/fullcalendar.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/gritter/jquery.gritter.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/gritter/jquery.gritter.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/gritter/jquery.gritter.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/gritter/jquery.gritter.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/iCheck/icheck.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/iCheck/icheck.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/ionRangeSlider/ion.rangeSlider.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/ionRangeSlider/ion.rangeSlider.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jasny/jasny-bootstrap.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jasny/jasny-bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jeditable/jquery.jeditable.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jeditable/jquery.jeditable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jqgrid/i18n/grid.locale-cnffe4.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jqgrid/i18n/grid.locale-cnffe4.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jqgrid/jquery.jqGrid.minffe4.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jqgrid/jquery.jqGrid.minffe4.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jquery-ui/jquery-ui.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jquery-ui/jquery-ui.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jsKnob/jquery.knob.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jsKnob/jquery.knob.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jsTree/jstree.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jsTree/jstree.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/extend/layer.ext.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/extend/layer.ext.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/layer.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/layer.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/layim/layim.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/layim/layim.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/layim/layim.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/layim/layim.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/skin/layer.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/skin/layer.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/skin/layer.ext.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/skin/layer.ext.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/skin/moon/style.css" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/layer/skin/moon/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/markdown/bootstrap-markdown.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/markdown/bootstrap-markdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/markdown/bootstrap-markdown.zh.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/markdown/bootstrap-markdown.zh.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/markdown/markdown.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/markdown/markdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/markdown/to-markdown.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/markdown/to-markdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/metisMenu/jquery.metisMenu.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/metisMenu/jquery.metisMenu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/morris/morris.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/morris/morris.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/morris/raphael-2.1.0.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/morris/raphael-2.1.0.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/nestable/jquery.nestable.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/nestable/jquery.nestable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/nouslider/jquery.nouislider.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/nouslider/jquery.nouislider.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/pace/pace.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/pace/pace.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/peity/jquery.peity.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/peity/jquery.peity.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/plyr/plyr.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/plyr/plyr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/preetyTextDiff/jquery.pretty-text-diff.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/preetyTextDiff/jquery.pretty-text-diff.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/prettyfile/bootstrap-prettyfile.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/prettyfile/bootstrap-prettyfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/rickshaw/rickshaw.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/rickshaw/rickshaw.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/rickshaw/vendor/d3.v3.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/rickshaw/vendor/d3.v3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/simditor/hotkeys.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/simditor/hotkeys.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/simditor/module.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/simditor/module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/simditor/simditor.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/simditor/simditor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/simditor/uploader.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/simditor/uploader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/slimscroll/jquery.slimscroll.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/slimscroll/jquery.slimscroll.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/sparkline/jquery.sparkline.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/sparkline/jquery.sparkline.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/staps/jquery.steps.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/staps/jquery.steps.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/suggest/bootstrap-suggest.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/suggest/bootstrap-suggest.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/summernote/summernote-zh-CN.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/summernote/summernote-zh-CN.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/summernote/summernote.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/summernote/summernote.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/sweetalert/sweetalert.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/sweetalert/sweetalert.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/switchery/switchery.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/switchery/switchery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/toastr/toastr.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/toastr/toastr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/treeview/bootstrap-treeview.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/treeview/bootstrap-treeview.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/validate/jquery.validate.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/validate/jquery.validate.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/validate/messages_zh.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/validate/messages_zh.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/webuploader/index.html" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/webuploader/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/webuploader/webuploader.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/plugins/webuploader/webuploader.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/welcome.min.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/js/welcome.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/plugins/fullavatareditor/scripts/fullAvatarEditor.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/plugins/fullavatareditor/scripts/fullAvatarEditor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/plugins/fullavatareditor/scripts/jQuery.Cookie.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/plugins/fullavatareditor/scripts/jQuery.Cookie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/plugins/fullavatareditor/scripts/swfobject.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/plugins/fullavatareditor/scripts/swfobject.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NetCollect/src/main/webapp/plugins/fullavatareditor/scripts/test.js" afterPath="$PROJECT_DIR$/NetCollect/src/main/webapp/plugins/fullavatareditor/scripts/test.js" />
+    </list>
+    <ignored path="$PROJECT_DIR$/mavenTest/target/" />
+    <ignored path="$PROJECT_DIR$/NetCollect/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="servlet-context.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application-context.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavenTest/src/main/resources/spring/application-context.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3450">
+              <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServiceTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavenTest/src/main/java/web/rest/ServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="spring-beans.schema" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>contextConfigLocation</find>
+    </findStrings>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_GetAccount.java" />
+        <option value="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_httpController.java" />
+        <option value="$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Facebook_TaskgroupController.java" />
+        <option value="$PROJECT_DIR$/mavenTest/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/spring/nbnn.fxml" />
+        <option value="$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/spring/spring-servlet.xml" />
+        <option value="$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/appServlet/servlet-context.xml" />
+        <option value="$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" />
+        <option value="$PROJECT_DIR$/mavenTest/src/main/resources/spring/application-context.xml" />
+        <option value="$PROJECT_DIR$/mavenTest/src/main/java/web/rest/ServiceTest.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="mavenTest Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="NetCollect" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="292" />
+    <option name="y" value="334" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="IdeaProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdeaProjects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdeaProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdeaProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaWeb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdeaProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdeaProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdeaProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdeaProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdeaProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdeaProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="mavenTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdeaProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdeaProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="mavenTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdeaProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdeaProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="mavenTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdeaProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdeaProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="NetCollect" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdeaProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdeaProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="NetCollect" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdeaProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdeaProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="NetCollect" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdeaProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdeaProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="NetCollect" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdeaProjects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdeaProjects" type="462c0819:PsiDirectoryNode" />
+              <item name="NetCollect" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="collect" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/NetCollect/lib" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ljr\IdeaProjects\mavenTest\src\main\webapp\WEB-INF" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat9">
+    <configuration name="Tomcat9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.0.M11" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="mavenTest:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_IdeaProjects" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="60353" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="JavaWeb:war exploded" />
+          <artifact name="mavenTest:war" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\ljr\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\ljr\IdeaProjects\NetCollect" />
+          <option name="myCopyRoot" value="C:\Users\ljr\IdeaProjects\NetCollect" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\ljr\IdeaProjects\NetCollect" />
+          <option name="myCopyRoot" value="C:\Users\ljr\IdeaProjects\NetCollect" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="48cdf893-063b-4973-aded-205fb390a81c" name="Default" comment="" />
+      <created>1511848280943</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1511848280943</updated>
+      <workItem from="1511848282463" duration="7980000" />
+      <workItem from="1511915555085" duration="11076000" />
+      <workItem from="1512003468264" duration="1791000" />
+      <workItem from="1512807499918" duration="38000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="20885000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1422367" sideWeight="0.11886994" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20738328" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12793177" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15351813" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13432837" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.88113004" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14232409" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5504886" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/java/web/rest/ServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="49" lean-forward="true" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/resources/spring/application-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3450">
+          <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/java/web/rest/ServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_GetAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/LnkController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_httpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/java/web/rest/ServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCollect/src/main/resources/spring/application-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="132" column="8" lean-forward="false" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/service/impl/IPAccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/dao/TbSystemLinkaccountMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_GetAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCollect/src/main/resources/spring/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_Facebook_TaskgroupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2451">
+          <caret line="121" column="36" lean-forward="true" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/System_httpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCollect/src/main/java/com/shty/collect/web/rest/LnkController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1600">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaWeb/JavaWeb.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaWeb/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/spring/nbnn.fxml" />
+    <entry file="file://$PROJECT_DIR$/NetCollect/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NetCollect/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/spring/spring-servlet.xml" />
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/appServlet/servlet-context.xml" />
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/main.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/java/web/rest/ServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/resources/spring/application-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3450">
+          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavenTest/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>mavenTest:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>NetCollect</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="" />
+  </component>
+</project>

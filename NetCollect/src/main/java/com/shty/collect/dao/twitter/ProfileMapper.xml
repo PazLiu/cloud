@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shty.collect.dao.twitter.ProfileMapper">
+    
+    <insert id="insertNew" parameterType="com.shty.collect.domain.twitter.TwitterProfile">
+        INSERT INTO tb_twitter_profile (ID, UserCardName, UserNickName, UserCardBio, UserCardUrl, UserCardJoinDateDesc, UserCardLocation, UserAvatarName, UserAvatarUrl, TargetID)
+        VALUES (#{ID}, #{UserCardName}, #{UserNickName}, #{UserCardBio}, #{UserCardUrl}, #{UserCardJoinDateDesc}, #{UserCardLocation}, #{UserAvatarName}, #{UserAvatarUrl}, #{TargetID})
+    </insert>   
+   
+    <select id="findProfileByNickName" parameterType="String" resultType="int">
+        SELECT count(*)
+        FROM t_profile t
+        WHERE t.UserNickName = #{UserNickName}
+    </select>
+    
+    <select id="findProfileID" parameterType="String" resultType="String">
+        SELECT t.ID
+        FROM tb_twitter_profile t
+        WHERE t.UserNickName = #{UserNickName}
+     </select>
+</mapper>

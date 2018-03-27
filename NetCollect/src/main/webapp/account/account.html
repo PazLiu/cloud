@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>账号 限制 - 数据</title>
+		<link rel="shortcut icon" href="favicon.ico"> <link href="../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+		<link href="../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<!-- jqgrid-->
+		<link href="../css/plugins/jqgrid/ui.jqgridffe4.css?0820" rel="stylesheet">
+		<link href="../css/animate.min.css" rel="stylesheet">
+		<link href="../css/style.min862f.css?v=4.1.0" rel="stylesheet">
+	
+	</head>
+		
+	<body>
+	 <div class="jqGrid_wrapper" style="height:840">
+		<div style="float:left">
+			<a id = "add_account"  title="添加" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../image/add.png"/></a>
+			<a id = "edit_account" title="修改" href="#modal-container-293732" role="button" class="btn" data-toggle="modal"> <img src="../image/edit.png"/></a>
+			<a id = "del_account"  title="删除" role="button" class="btn" > <img src="../image/delete.png"/></a>
+			<a id = "select_user"  title="刷新" role="button" class="btn" > <img src="../image/select.png"/></a>
+		</div>
+
+		<div style="float:left">
+		<form enctype="multipart/form-data" id="batchUpload"  action="upload" method="post" class="form-horizontal">  
+        <button class="btn btn-success btn-xs" id="uploadEventBtn" style="height:25px;margin-top:6px;margin-left:20px;float:left"  type="button" >选择文件
+        </button>
+        <input type="file" name="file"  style="width:0px;height:0px;margin-top:6px;float:left" id="uploadEventFile">
+        <input id="uploadEventPath"  disabled="disabled"  type="text" placeholder="请选择Excel表" style="border: 1px solid #e6e6e6; height: 25px;width: 200px;margin-top:6px;float:left" >                                         
+        </form>
+	    <div style="float:left">
+	    <button type="button" style="height:25px;margin-top:6px;float:left" class="btn btn-success btn-sm"  onclick="uploadButton()" >导入</button>
+	    </div>
+	    <div style="float:left">
+	    	<a href="#" id= "loadHref" class="btn btn-success btn-sm" style="height:25px;margin-top:6px;float:left;margin-left:20px" download>下载模板</a>
+	    </div>
+	    </div>
+		<div style="clear:both"></div>
+
+		<table id="table_list_2"></table>
+		<div id="pager_list_2"></div>
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						
+						<div class="modal fade" id="modal-container-293732" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h4 class="modal-title" id="myModalLabel">
+											账号操作
+										</h4>
+									</div>
+									<div class="modal-body">
+										<div style="display:none">
+										<label for="male">ID：</label>
+										<input type="text" id="id" name="id" class="form-control uname" placeholder="请输入用户名" />
+										</div>
+										<div>
+										<label for="male">用户名：</label>
+										<input type="text" id="accountname" name="accountname" class="form-control uname" placeholder="请输入用户名" />
+										</div>
+										<div>
+										<label for="male">密&nbsp;码：</label>
+										<input type="password" id="password" name="password"  class="form-control pword m-b" placeholder="请输入密码" />
+										<div>
+										<label for="male">账号类型：</label>
+										<select id="accounttype" style="width : 100px;height : 30px;">
+											<option value="0">请选择...</option>
+											<option value="1">Facebook</option>
+											<option value="2">Linkedin</option>
+											<option value="3">Twitter</option>
+										</select>
+										<div style="visibility:hidden">1</div>
+										</div>
+										<div>
+										<label for="male">HTTP账号：</label>
+										<select id="httpid" style="width : 250px;height : 30px;">
+											<!-- //下拉框动态加载数据 -->
+										</select>
+										<div style="visibility:hidden">1</div>
+									</div>
+									</div>
+									<div class="modal-footer">
+										 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+										 <button  id = "button_add" type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+		</div>
+</div>
+			
+	 </div>
+		
+	<script src="../js/jquery.min.js?v=2.1.4"></script>
+    <script src="../js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="../js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../js/plugins/jqgrid/i18n/grid.locale-cnffe4.js?0820"></script>
+    <script src="../js/plugins/jqgrid/jquery.jqGrid.minffe4.js?0820"></script>
+    <script src="../js/content.min.js?v=1.0.0"></script>
+	<script src="../js/my.js"></script>
+	 <script>
+	 $(document).ready(function(){$.jgrid.defaults.styleUI="Bootstrap";
+			var value = sessionStorage.getItem("key");
+   			if (value == null) {
+				alert("您未登录，请登录！");
+				location.href = "../login.html";
+			} else {
+				var user = $("#user");
+				user.text(value);
+			}
+			//动态加载HTTP账号数据
+			 $.ajax({  
+                url: "http://"+host_node+"/NetCollect/rest/getAllHttp",    //后台webservice里的方法名称  
+				contentType: "application/json; charset=utf-8",   
+                type: "get",  
+				async : true ,
+                dataType: "json",  
+                success: function (date) {  
+					var optionstring = "";
+					for (var j = 0; j < date.length;j++) {				
+						optionstring += "<option value=\"" + date[j].id + "\" >" +"HTTP代理IP："+date[j].httpip+"&nbsp;&nbsp; "+"HTTP代理端口："+date[j].port+"</option>";  
+						$("#httpid").html("<option value='0'>请选择...</option> "+optionstring);
+					}  
+                } 
+            }); 
+			
+			$.ajax({
+				url : "http://"+host_node+"/NetCollect/rest/getAllaccount",
+				contentType : "application/json; charset=utf-8",
+				type : "get",
+				async : true ,
+				dataType : "json",
+				success : function (date) {
+					var id = date.id;
+					var accountname = date.accountname;
+					var password = date.password;
+					var accounttype = date.accounttype;
+					var httpip = date.httpip;
+					var httpid = date.httpid;
+					var isused = date.isused;
+					var creattime = date.datecreattime;
+					var updatetime = date.dateupdatetime;
+					$("#table_list_2").jqGrid(
+					{data:date,datatype:"local",height:450,autowidth:true,shrinkToFit:true,rowNum:10,rowList:[10,20,30],
+					colNames:["序号","HTTPID","用户名","密码","账号类型","HTTP代理","账号状态","创建时间","修改时间"],
+					colModel:[{name:"id",index:id,editable:true,width:30,search:true,align:'center'},
+					{name:"httpid",index:httpid,editable:true,width:30,search:true,align:'center',hidden:true},
+					{name:"accountname",index:accountname,editable:true,width:70,align:'center'},
+					{name:"password",index:password,editable:true,width:70,align:'center'},
+					{name:"accounttype",index:accounttype,editable:true,width:50,align:'center'},
+					{name:"httpip",index:httpip,editable:true,width:50,align:'center'},
+					{name:"isused",index:isused,editable:true,width:50,align:'center'},
+					{name:"datecreattime",index:creattime,editable:true,width:70,align:'center'},
+					{name:"dateupdatetime",index:updatetime,editable:true,width:70,align:'center'}],
+					pager:"#pager_list_2",viewrecords:true,sortname : 'id',viewrecords : true,sortorder : "desc",multiselect : true,
+					caption:"链路账号数据",add:true,edit:false,addtext:"Add",edittext:"Edit",hidegrid:false});
+					//$("#table_list_2").setSelection(4,true);
+					$("#table_list_2").jqGrid("navGrid","#pager_list_2",{edit:false,add:false,del:false,search:true},{height:200,reloadAfterSubmit:true});
+					$(window).bind("resize",function(){var width=$(".jqGrid_wrapper").width();
+					$("#table_list_2").setGridWidth(width)});
+				},  
+                error: function (msg) {  
+                    alert("加载出错了！");  
+                } 
+				
+			});
+
+			
+			//刷新
+			$("#select_user").click(function(){
+				location.href="account.html";
+			})
+			
+			     
+         
+			//用户修改弹窗
+			$("#edit_account").click(function(){
+				var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+				var data=$('#table_list_2').jqGrid('getRowData',id);
+				if(data.id==undefined){
+					alert("未选择，请选择！");
+					return false;
+				}
+				var accountname = data.accountname;
+				var password = data.password;
+				var accounttype= data.accounttype;
+				var httpip= data.httpip;
+				var httpid= data.httpid;
+				if(accounttype=="Facebook"){
+					accounttype="1";
+				}else if(accounttype =="Linkedin"){
+					accounttype="2";
+				}else if(accounttype =="Twitter"){
+					accounttype="3";
+				}
+				$("#id").val(id);
+				$("#accountname").val(accountname);
+				$("#password").val(password);
+				$("#accounttype").val(accounttype);
+				$("#httpid").val(httpid);
+			});
+			
+			//用户添加弹窗，清空表单值
+			$("#add_account").click(function(){
+				$("#id").val("");
+				$("#accountname").val("");
+				$("#password").val("");
+				$("#accounttype").val("0");
+				$("#httpid").val("0");
+			});
+			
+			//用户删除
+			$("#del_account").click(function(){
+					var id = $("#table_list_2").jqGrid('getGridParam','selarrrow');
+					var strid = [];
+					for(i = 0;i < id.length; i++){
+					var data=$('#table_list_2').jqGrid('getRowData',id[i]);
+					strid.push(data.id);
+					}
+					if(strid==""){
+						alert("未选择，请选择！");
+						return false;
+					}
+					var status = confirm("你确定要删除吗？");
+					if(!status){
+						return false;
+					}
+					$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/deletesocialAccount",
+					contentType : "application/json; charset=utf-8",
+					traditional:true,   
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						'id' : strid
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("删除成功");
+							location.href="account.html";
+						}else{
+							alert("删除失败！");
+						}
+					}
+				});
+			});
+			//添加，修改的提交
+			$("#button_add").click(function(){
+				var id =  $("#id").val();
+				var accountname = $("#accountname").val();
+				var password = $("#password").val();
+				var accounttype = $("#accounttype").val();
+				var httpid = $("#httpid").val();
+				var isused = "0";
+				if(password==""||accountname==""){
+					alert("用户名密码不能为空！");
+					return false;
+				}
+				if(accounttype=="0"){
+					alert("请选择账号类型！");
+					return false;
+				}
+				$.ajax({
+					url : "http://"+host_node+"/NetCollect/rest/addsocialAccount",
+					contentType : "application/json; charset=utf-8",
+					async : true ,
+					type : "get",
+					datatype : "json",
+					data : {
+						id : id,
+						accountname : accountname,
+						password : password,
+						accounttype : accounttype,
+						isused : isused,
+						httpid : httpid
+					},
+					success : function (data){
+						if(data.result=="success"){
+							alert("添加成功");
+							location.href="account.html";
+						}else{
+						alert("失败，请查看是否填写正确！");
+						}
+					}
+				});
+			});
+		});
+		
+		var newHref = "http://"+host_node+"/NetCollect/account.xls";
+	  $('#loadHref').attr("href",newHref);
+		var Upload = function(){
+     
+        this.init = function(){
+         
+        //模拟上传excel
+         $("#uploadEventBtn").unbind("click").bind("click",function(){
+             $("#uploadEventFile").click();
+         });
+         $("#uploadEventFile").bind("change",function(){
+             $("#uploadEventPath").attr("value",$("#uploadEventFile").val());
+         });
+         
+        };
+       //点击上传按钮
+        this.uploadBtn = function(){
+        var uploadEventFile = $("#uploadEventFile").val();
+        if(uploadEventFile == ''){
+            alert("请选择Excel,再上传");
+        }else if(uploadEventFile.lastIndexOf(".xls")<0){//可判断以.xls和.xlsx结尾的excel
+            alert("只能上传Excel文件");
+        }else{
+            var url = "http://"+host_node+"/NetCollect/rest/uploadAccount";
+            var formData = new FormData($('form')[0]);
+            upload.sendAjaxRequest(url,'POST',formData);
+        }
+       };
+     
+        this.sendAjaxRequest = function(url,type,data){
+        $.ajax({
+            url : url,
+            type : type,
+            data : data,
+            success : function(result) {
+                alert( result);
+            },
+            error : function() {
+                alert( "excel上传失败");
+            },
+            cache : false,
+            contentType : false,
+            processData : false
+        });
+    };
+    }
+     
+ 
+       var upload;
+       $(function(){
+       upload = new Upload();
+       upload.init();
+       });
+       function uploadButton(){
+       	upload = new Upload();
+       	upload.uploadBtn();
+       }
+		
+		
+    </script>
+	
+	</body>
+</html>

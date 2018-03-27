@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shty.collect.dao.fb.TimelineCommentMapper">
+
+	<insert id="insert_TimelineComment" parameterType="com.shty.collect.domain.fb.TimelineComment"  useGeneratedKeys="true" keyProperty="id">
+		insert into tb_facebook_comment (content,fbid,fburl,fmt_headline,fmt_name,imgcode,imgurl,referenceType,referenceValue,pubdate,FBStory_id,imgPath) values
+		(#{content},#{fbid},#{fburl},#{fmt_headline},#{fmt_name},#{imgcode},#{imgurl},#{referenceKey},#{referenceValue},#{pubdate},#{FBStory_id},#{imgPath})
+	</insert>
+	
+	<insert id="inset_TimelineLike" parameterType="com.shty.collect.domain.fb.TimelineComment"  useGeneratedKeys="true" keyProperty="id">
+		insert into tb_facebook_like (fbid,fburl,fmt_headline,fmt_name,imgcode,imgurl,referenceType,referenceValue,FBStory_id,imgPath) values
+		(#{fbid},#{fburl},#{fmt_headline},#{fmt_name},#{imgcode},#{imgurl},#{referenceKey},#{referenceValue},#{FBStory_id},#{imgPath})
+	</insert>
+</mapper>

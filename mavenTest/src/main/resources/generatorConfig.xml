@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+		
+	<!-- 数据库驱动包位置 -->  
+    <classPathEntry  
+        location="E:/mysql-connector-java-5.1.21.jar" />  
+		
+  	<context id="netcollect">  
+  
+	    <jdbcConnection connectionURL="jdbc:mysql://192.168.191.28:3306/netcollect" driverClass="com.mysql.jdbc.Driver" password="123456" userId="root" />
+	    
+	    <javaModelGenerator targetPackage="com.shty.collect.domain" targetProject="NetCollect/src/main/java" />
+	    
+	    <sqlMapGenerator targetPackage="com.shty.collect.dao" targetProject="NetCollect/src/main/java" />
+	    
+	    <javaClientGenerator targetPackage="com.shty.collect.dao" targetProject="NetCollect/src/main/java" type="XMLMAPPER" />
+	    
+	    <table schema="netcollect" tableName="%" enableSelectByExample="false" 
+	    	enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+
+    	</table>
+    	
+  </context>
+  
+</generatorConfiguration>
